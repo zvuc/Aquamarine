@@ -23,9 +23,12 @@ This way is recommended because you can easily update the style whenever there i
 ### 2b. Custom installation
 Copy and paste the code from `style.css` as a new userstyle in your browser. 
 
-Make sure the code applies to site domains beginning with `https://www.irccloud.com/#`. The reason why `#` is included at the end is to prevent the style altering other pages such as the login page. The `#` sign is automatically added when you're in chat view, so if the style does not apply at first, just hit refresh and it'll go dark.
+For browsers other than Firefox, remove the top `@-moz-document url-prefix("https://www.irccloud.com/#") {` line and the closing bracket `}` at the bottommost line of `style.css when you're pasting the code into the extension. Make sure the code applies to site domains beginning with `https://www.irccloud.com/#`. 
+
+The reason why `#` is included at the end is to prevent the style altering other pages such as the login page. The `#` sign is automatically added when you're in chat view, so if the style does not apply at first, just hit refresh and it'll go dark.
 
 The `_colors.css` also in the repo is not a standalone stylesheet, it's for the self-nick color select option on userstyles.org. Copy a color hex code you like and replace it with where it says `/*[[nick_color]]*/` inside `style.css` and it that will be your alternative nick color.
+
 
 ## Changelog
 See [CHANGELOG.md](/CHANGELOG.md).
