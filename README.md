@@ -28,7 +28,7 @@ Make sure the code applies to site domains beginning with `https://www.irccloud.
 The `_colors.css` also in the repo is not a standalone stylesheet, it's for the self-nick color select option on userstyles.org. Copy a color hex code you like and replace it with where it says `/*[[nick_color]]*/` inside `style.css` and it that will be your alternative nick color.
 
 ## Changelog
-See [CHANGELOG.md](/blob/master/CHANGELOG.md).
+See [CHANGELOG.md](/CHANGELOG.md).
 
 
 ## Disclaimer
