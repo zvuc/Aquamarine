@@ -1,0 +1,20 @@
+/* for userstyles.org style options */
+/* self nick color */
+/*[[nick_color]]*/
+
+.colors {
+  /* red */
+  color: #ff3334; 
+  /* yellow */
+  color: #ffcc66; 
+  /* green */
+  color: #9ec400; 
+  /* teal */
+  color: #54ced6; 
+  /* blue */
+  color: #6699cc; 
+  /* purple */
+  color: #b777e0; 
+  /* brown */
+  color: #b09276; 
+}
