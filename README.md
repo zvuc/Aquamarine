@@ -7,6 +7,9 @@ Darkens and recolorizes IRCCloud. Fine-tuned to every detail, carefully tested t
 
 This repo is for code maintenance. Whenever there is a need to update, it will be updated both here and at [userstyles.org page](https://userstyles.org/styles/104692/).
 
+**Note**: The userstyle should not apply when you visit http://irccloud.com the first time. The stylesheet targets urls starting with `/#` after the domain, which is utomatically appended after the 'chat view' loads. Refresh the page after it's loaded or just type the `#` after the url. (Reason why it's done like this is explained [here](/issues/1))
+
+
 ## How to use
 ### 1. Install userstyle extensions
 
