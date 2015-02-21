@@ -244,7 +244,7 @@ body.app {
 }
 
 .overlayHead {
-	background-image: linear-gradient(to bottom, #777, #aaa);
+	background-image: linear-gradient(to bottom, #999, #666);
 	border-bottom: none;
 }
 
@@ -263,6 +263,12 @@ body.app {
 		box-sizing: border-box;
 	}
 
+}
+
+.overlaycontainer {
+	button.close {
+		margin: 3px 5px;
+	}
 }
 
 
@@ -1220,112 +1226,131 @@ table.shortcuts kbd span {
 
 /* ---------------------------------------------------------------------------------------- */
 
-/* context menu */
-.contextMenu {
-	background-color: rgba(21,27,27,0.95);
-	border: 1px solid #609696;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-	color: #ccc;
+body.app {
+	/* context menu */
+	.contextMenu {
+		background-color: rgba(21,27,27,0.95);
+		border: 1px solid #609696;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+		color: #ccc;
 
-	a {
+		a {
+			color: #aaa;
+		}
+		a:hover {
+			background: none;
+		}
+
+		.user {
+			color: #fff;
+		}
+
+		.info {
+			color: #aaa;
+		}
+	}
+
+
+	#channelContextMenu.active.mod ul.actions li a.topic, 
+	#memberContextMenu ul.actions li a, 
+	#uploadContextMenu ul.actions li a, 
+	.bufferContextMenu ul.actions li a.delete, 
+	.bufferContextMenu ul.actions li a.export, 
+	.bufferContextMenu ul.actions li a.ignores, 
+	.bufferContextMenu ul.actions li a.images, 
+	.bufferContextMenu ul.actions li a.joinpart, 
+	.bufferContextMenu ul.actions li a.joinpartcollapse, 
+	.bufferContextMenu ul.actions li a.notifyAll, 
+	.bufferContextMenu ul.actions li a.pastes, 
+	.bufferContextMenu ul.actions li a.tweets, 
+	.bufferContextMenu ul.actions li a.unread, 
+	.bufferContextMenu.active ul.actions li a {
 		color: #fff;
 	}
 
-	.user {
-		color: #fff;
-	}
-
-	.info {
-		color: #aaa;
-	}
-}
-
-#channelContextMenu.active.mod ul.actions li a.topic,
-#memberContextMenu ul.actions li a, .bufferContextMenu ul.actions li a.delete,
-.bufferContextMenu ul.actions li a,
-.bufferContextMenu.active ul.actions li a {
-	color: #fff;
-}
-
-#channelContextMenu.active.mod ul.actions li a.topic,
-#memberContextMenu ul.actions li a, .bufferContextMenu ul.actions li a.delete,
-.bufferContextMenu ul.actions li a.ignores,
-.bufferContextMenu ul.actions li a.images,
-.bufferContextMenu ul.actions li a.joinpart,
-.bufferContextMenu ul.actions li a.joinpartcollapse,
-.bufferContextMenu ul.actions li a.unread, .bufferContextMenu.active ul.actions li a {
-	color: #fff;
-}
-
-#channelContextMenu ul.actions li a:hover,
-#memberContextMenu ul.actions li a:hover,
-.bufferContextMenu ul.actions li a:hover {
-	background-color: fadeout(@primary-color-pale,50%) !important;
-	cursor: pointer;
-}
-
-#channelContextMenu ul.actions li a:active,
-#memberContextMenu ul.actions li a:active,
-.bufferContextMenu ul.actions li a:active {
-	background-color: @primary-color-pale !important;
-}
-
-/* replace check image */
-#channelContextMenu ul.actions li.notifyAll a,
-#channelContextMenu ul.actions li.showMembers a,
-.bufferContextMenu ul.actions li.collapseDisconnects a,
-.bufferContextMenu ul.actions li.collapseJoinPart a,
-.bufferContextMenu ul.actions li.inlineImages a,
-.bufferContextMenu ul.actions li.inlinePastes a,
-.bufferContextMenu ul.actions li.inlineTweets a,
-.bufferContextMenu ul.actions li.showJoinPart a,
-.bufferContextMenu ul.actions li.trackUnread a {
-	background-image: none;
-}
-
-#channelContextMenu.notifyAll ul.actions li.notifyAll a:before,
-#channelContextMenu.showMemberList ul.actions li.showMembers a:before,
-.bufferContextMenu.collapsingDisconnects ul.actions li.collapseDisconnects a:before,
-.bufferContextMenu.collapsingJoinPart ul.actions li.collapseJoinPart a:before,
-.bufferContextMenu.inlineImagesEnabled ul.actions li.inlineImages a:before,
-.bufferContextMenu.inlinePastesEnabled ul.actions li.inlinePastes a:before,
-.bufferContextMenu.inlineTweetsEnabled ul.actions li.inlineTweets a:before,
-.bufferContextMenu.showingJoinPart ul.actions li.showJoinPart a:before,
-.bufferContextMenu.trackingUnread ul.actions li.trackUnread a:before {
-	content: "✔";
-	display: block;
-	left: 7px;
-	position: absolute;
-	color: @color-teal-light;
-	font-size: 0.8em;
-	line-height: 18px;
-}
-
-.bufferContextMenu {
-	margin-top: -1px;
-}
-
-
-#channelContextMenu .modeLine {
-	border-top: 1px solid @primary-color-pale;
-}
-
-/* member context menu */
-#memberContextMenu {
-	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-	
-	div.userContext {
+	#channelContextMenu.active.mod ul.actions li a.topic:hover, 
+	#memberContextMenu ul.actions li a:hover, 
+	.bufferContextMenu ul.actions li a.delete:hover, 
+	.bufferContextMenu ul.actions li a.export:hover, 
+	.bufferContextMenu ul.actions li a.ignores:hover, 
+	.bufferContextMenu ul.actions li a.images:hover, 
+	.bufferContextMenu ul.actions li a.joinpart:hover, 
+	.bufferContextMenu ul.actions li a.joinpartcollapse:hover, 
+	.bufferContextMenu ul.actions li a.notifyAll:hover, 
+	.bufferContextMenu ul.actions li a.pastes:hover, 
+	.bufferContextMenu ul.actions li a.tweets:hover, 
+	.bufferContextMenu ul.actions li a.unread:hover, 
+	.bufferContextMenu.active ul.actions li a:hover {
 		background-color: fadeout(@primary-color-pale,50%);
+		cursor: pointer;
 	}
-	ul.actions {
+
+	#channelContextMenu ul.actions li a:active,
+	#memberContextMenu ul.actions li a:active,
+	.bufferContextMenu ul.actions li a:active {
+		background-color: @primary-color-pale;
+	}
+
+	.bufferContextMenu ul.actions li a.delete {
+		color: lighten(@color-red, 10%);
+	}
+
+	/* replace check image */
+	#channelContextMenu ul.actions li.notifyAll a,
+	#channelContextMenu ul.actions li.showMembers a,
+	.bufferContextMenu ul.actions li.collapseDisconnects a,
+	.bufferContextMenu ul.actions li.collapseJoinPart a,
+	.bufferContextMenu ul.actions li.inlineImages a,
+	.bufferContextMenu ul.actions li.inlinePastes a,
+	.bufferContextMenu ul.actions li.inlineTweets a,
+	.bufferContextMenu ul.actions li.showJoinPart a,
+	.bufferContextMenu ul.actions li.trackUnread a {
+		background-image: none;
+	}
+
+	#channelContextMenu.notifyAll ul.actions li.notifyAll a:before,
+	#channelContextMenu.showMemberList ul.actions li.showMembers a:before,
+	.bufferContextMenu.collapsingDisconnects ul.actions li.collapseDisconnects a:before,
+	.bufferContextMenu.collapsingJoinPart ul.actions li.collapseJoinPart a:before,
+	.bufferContextMenu.inlineImagesEnabled ul.actions li.inlineImages a:before,
+	.bufferContextMenu.inlinePastesEnabled ul.actions li.inlinePastes a:before,
+	.bufferContextMenu.inlineTweetsEnabled ul.actions li.inlineTweets a:before,
+	.bufferContextMenu.showingJoinPart ul.actions li.showJoinPart a:before,
+	.bufferContextMenu.trackingUnread ul.actions li.trackUnread a:before {
+		content: "✔";
+		display: block;
+		left: 7px;
+		position: absolute;
+		color: @color-teal-light;
+		font-size: 0.8em;
+		line-height: 18px;
+	}
+
+	.bufferContextMenu {
+		margin-top: -1px;
+	}
+
+
+	#channelContextMenu .modeLine {
 		border-top: 1px solid @primary-color-pale;
 	}
-	input.message {
-		width: 100%;
-		box-sizing: border-box;
+
+	/* member context menu */
+	#memberContextMenu {
+		box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+		
+		div.userContext {
+			background-color: fadeout(@primary-color-pale,50%);
+		}
+		ul.actions {
+			border-top: 1px solid @primary-color-pale;
+		}
+		input.message {
+			width: 100%;
+			box-sizing: border-box;
+		}
 	}
 }
-
 
 /* ---------------------------------------------------------------------------------------- */
 
