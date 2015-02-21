@@ -3,6 +3,9 @@
 #### :: 2015-02-21 ::
 - converted/refactored code to less, set up grunt build task for easier management
 - removed <code>#</code> from <code>url-prefix</code>
+- changed (rearranged) nick colors to match original IRCCloud color scheme
+- changed default font to Lato (following IRCCloud landing page font)
+- minor styling changes in many places
 
 #### :: 2015-02-03 ::
 - fixed white border appearing in message input box

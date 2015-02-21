@@ -7,12 +7,33 @@
 @color-purple: #b777e0;
 @color-brown: #b09276;
 
-@color-yellow-brighter: #f8df26;
+@color-teal-light: #82cbcb;
+@color-yellow-light: #f8df26;
 
+
+@primary-color: #82cbcb;
+@primary-color-pale: #3e7777;
+@primary-color-pale-2: #637171;
+
+
+/* Lato font load */
+@import "http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900";
+
+.font-set {
+	font-family: 
+		"Lato",
+		"Helvetica Neue","Helvetica","Arial",
+		"HiraKakuProN-W3","Hiragino Sans GB W3",
+		"Apple SD Gothic Neo",
+		"NanumBarunGothic","NanumGothic",
+		"나눔고딕","Malgun Gothic",
+		sans-serif;
+}
 
 /* base */
 body.app {
 	background-color: #1f1f1f;
+	.font-set;
 
 	#container {
 		color: #eee;
@@ -45,14 +66,14 @@ body.app {
 	}
 
 	// links
-	a { color: #82cbcb; }
-	a:hover { color: #a3ffff; }
+	a { color: @color-teal-light; }
+	a:hover { color: lighten(@color-teal-light, 5%); }
 
 	#footer a, #headercell a, #sidebar #limits a, h1#title a {
-		color: #82cbcb;
+		color: @color-teal-light;
 	}
 	#footer a:hover, #headercell a:hover, #sidebar #limits a:hover, h1#title a:hover {
-		color: #a3ffff;
+		color: lighten(@color-teal-light, 5%);
 	}
 
 	// mode icons colorset
@@ -72,6 +93,9 @@ body.app {
 
 	// global button
 	button {
+		.font-set;
+		font-weight: 900;
+		font-size: 1rem;
 
 		span {
 			background: #666;
@@ -79,12 +103,16 @@ body.app {
 			border: 1px solid #666;
 			color: #eee;
 			transition: 0.2s;
+			padding: 0.3em 1em;
+			font-size: 0.9rem;
+			font-weight: 900;
+			letter-spacing: 1px;
+			text-transform: uppercase;
 		}
 
 		&:hover:not([disabled]) a, 
 		&:hover:not([disabled]) span {
 			background: #777;
-			box-shadow: 0 1px 0 rgba(0,0,0,0.5);
 			border: 1px solid #777;
 		}
 
@@ -105,40 +133,35 @@ body.app {
 		
 		// action button
 		&.action span {
-			background: #399494;
-			box-shadow: none;
-			border: 1px solid #3d9f9f;
+			background: @primary-color-pale;
+			border: 1px solid @primary-color-pale;
 			color: #fff;
 			transition: 0.2s;
 		}
 
 		&.action:hover:not([disabled]) span {
-			background: #4ecccc;
-			box-shadow: none;
-			border: 1px solid @color-teal;
+			background: lighten(@primary-color-pale, 5%);
+			border: 1px solid lighten(@primary-color-pale, 5%);
 		}
 
 		// delete button
 		&.delete span {
 			background: @color-red;
-			box-shadow: none;
 			border: 1px solid @color-red;
 			color: #fff;
 			transition: 0.2s;
 		}
 
 		&.delete:hover:not([disabled]) span {
-			background: #f2777a;
-			box-shadow: none;
-			border: 1px solid #f2777a;
+			background: lighten(@color-red,10%);
+			border: 1px solid lighten(@color-red,10%);
 		}
 
 		&.active a, 
 		&.active span, 
 		&.active:hover a, 
 		&.active:hover span {
-			background: #399494;
-			box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+			background: @primary-color-pale;
 			border: 1px solid @color-teal;
 		}
 
@@ -156,7 +179,17 @@ body.app {
 
 		// caret
 		b.bullet {
-			color: #eee;
+			position: relative;
+			bottom: 3px;
+			margin-left: 3px;
+			display: inline-block;
+			color: transparent;
+			overflow: hidden;
+			height: 0;
+			width: 0;
+			border-top: 2px solid #eee;
+			border-left: 2px solid transparent;
+			border-right: 2px solid transparent;
 		}
 
 	}
@@ -191,7 +224,7 @@ body.app {
 	}
 
 	a.ui-state-focus, a.ui-state-focus span.host, a.ui-state-hover, a.ui-state-hover span.host {
-		background-color: rgba(74,115,115,1);
+		background-color: @primary-color-pale;
 		color: #fff;
 	}
 
@@ -217,7 +250,11 @@ body.app {
 .overlay_container_prompt {
 
 	.overlayHead {
-		background-image: linear-gradient(to bottom, #58acb1, #2e595c);
+		background-image: linear-gradient(to bottom, lighten(@primary-color-pale,10%), @primary-color-pale);
+
+		a {
+			color: #fff;
+		}
 	}
 
 	.overlaycontents input.prompt {
@@ -238,15 +275,35 @@ body.app {
 	b, strong {
 		color: #fff;
 	}
+
+	a {
+		padding: 0 2px;
+	}
+
+	span.numInvites {
+		background: @primary-color-pale-2;
+		text-align: center;
+		padding: 1px 4px;
+		color: #fff;
+	}
 }
 
 body.app {
 	// page title
 	h1#title span.logotype {
 		color: #eee;
+		font-weight: bold;
+		padding-left: 2px;
 
 		span.cloud {
 			color: #eee;
+			font-weight: normal;
+		}
+
+		span.beta {
+			color: #aaa;
+			font-weight: normal;
+			font-style: italic;
 		}
 	}
 
@@ -271,6 +328,14 @@ body.app {
 
 	// topic
 	td.statuscell div.status {
+
+		.buttons button {
+			padding: 0;
+
+			span {
+				padding: 0.3em 1em;
+			}
+		}
 
 		h2.bufferHeading {
 
@@ -301,7 +366,7 @@ div.scroll {
 
 /* links */
 div#searchResults div.searchResultDate a {
-	color: #82cbcb;
+	color: @color-teal-light;
 }
 
 div.log {
@@ -313,7 +378,7 @@ div.log {
 	div.status a,
 	div.table a,
 	div.warning a {
-		color: #82cbcb;
+		color: @color-teal-light;
 	}
 }
 
@@ -330,6 +395,11 @@ div.dateWrapper table {
 	box-shadow: none;
 	border-top: 1px solid #444;
 	border-bottom: 1px solid #222; 
+	font-style: italic;
+}
+
+div.dateWrapper .clockcell {
+	filter: invert(100%);
 }
 
 /* nick colors (Default) */
@@ -392,11 +462,11 @@ div.log {
 	}
 	div.highlight span.date,
 	div.searchMatch span.date {
-		color: #82cbcb;
+		color: @color-teal-light;
 	}
 	div.groupedLines {
 		background-color: #313b3b;
-		border-color: #82cbcb;
+		border-color: @color-teal-light;
 	}
 	div.notice {
 		background-color: #39352c;
@@ -409,19 +479,22 @@ div.log {
 	div.bottomSeen hr,
 	div.focusSeen hr,
 	div.lastSeen hr {
-		border-top: 1px solid #666;
+		border-top: 1px solid rgba(255,255,255,0.2);
 	}
 	div.bottomSeen span,
 	div.focusSeen span,
 	div.lastSeen span.text {
 		background-color: #1f1f1f;
 		color: @color-yellow;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-style: italic;
 	}
 
 	// backlog divider
 	div.backlogDivider hr,
 	div.fetch hr {
-		border-color: #82cbcb;
+		border-color: @color-teal-light;
 	}
 
 
@@ -552,7 +625,7 @@ td.bufferinputcell {
 
 /* input info (autocomplete) */
 .inputInfo {
-	border: 2px solid #3d9f9f;
+	border: 2px solid @primary-color-pale;
 	box-shadow: 0 1px 4px rgba(0,0,0,0.5);
 	background-image: linear-gradient(to bottom, #444, #333);
 	
@@ -560,10 +633,10 @@ td.bufferinputcell {
 		color: #eee;
 	}
 	span.original {
-		color: #82cbcb;
+		color: @color-teal-light;
 	}
 	span.highlight, span.item:hover {
-		background-color: #3d9f9f;
+		background-color: @primary-color-pale;
 	}
 }
 
@@ -571,8 +644,8 @@ td.bufferinputcell {
 /* connection message */
 .connectionStatus {
 	background-image: none;
-	background-color: #637171;
-	border-color: #637171;
+	background-color: @primary-color-pale-2;
+	border-color: @primary-color-pale-2;
 	color: #eee;
 	border-width: 0;
 	
@@ -582,8 +655,8 @@ td.bufferinputcell {
 		border-color: #ccc;
 	
 		&:hover {
-			background-color: #587b7b;
-			border-color: #609696;
+			background-color: @primary-color-pale;
+			border-color: @primary-color-pale;
 			color: #fff;
 		}
 
@@ -598,13 +671,13 @@ td.bufferinputcell {
 	&.reconnect,
 	&.upgrade {
 		a {
-			background-color: #637171;
-			border-color: #637171;
+			background-color: @primary-color-pale-2;
+			border-color: @primary-color-pale-2;
 			color: #eee;
 		}
 		a:hover {
-			background-color: #587b7b;
-			border-color: #609696;
+			background-color: lighten(@primary-color-pale-2, 5%);
+			border-color: lighten(@primary-color-pale-2, 5%);
 			color: #fff;
 		}
 
@@ -612,7 +685,7 @@ td.bufferinputcell {
 			color: #a0cbcb;
 		}
 		a:hover span[class] {
-			color: #82cbcb;
+			color: @color-teal-light;
 		}
 	}
 
@@ -640,7 +713,7 @@ td.bufferinputcell {
 	// fail
 	&.fail {
 		background-image: none;
-		background-color: @color-yellow-brighter;
+		background-color: @color-yellow;
 		border-color: @color-yellow;
 		color: #632800;
 		
@@ -731,7 +804,7 @@ div.memberwrapper {
 
 /* ------------------------------ sidebar -------------------------------------------- */
 
-#sidebar {
+#sidebarwrapper {
 
 	// trial notice
 	#limits {
@@ -741,7 +814,7 @@ div.memberwrapper {
 			color: #eee !important;
 		}
 		a span.highlight {
-			color: #82cbcb !important;
+			color: @color-teal-light !important;
 		}
 
 		h2, h2:hover {
@@ -773,38 +846,62 @@ div.memberwrapper {
 		}
 
 		// network header
-		h2 a.buffer {
-			background-color: #444;
-			border-bottom: 1px solid #252525;
+		h2 {
+			a.buffer {
+				color: #777;
+				background-color: #444;
+				border-bottom: 1px solid #252525;
+			}
+			a.buffer:hover {
+				background-color: #555;
+			}
+			
+			&.failed a.buffer,
+			&.failed a.buffer:hover,
+			&.failed a.buffer .label {
+				background-color: @color-yellow;
+				color: #915433;
+				opacity: 0.8;
+			}
+
+			&.failed.selected a.buffer, 
+			&.failed.selected a.buffer:hover {
+				padding-left: 29px;
+				background-color: @color-yellow;
+				border-bottom: 1px solid #252525;
+				opacity: 1;
+			}
+			&.failed.selected a.buffer span.label {
+				padding-left: 0;
+			}
 		}
-		h2.failed a.buffer:hover {
-			color: #915433;
-			background-color: @color-yellow;
-		}
-		h2.failed.selected a.buffer, h2.failed.selected a.buffer:hover {
-			background-color: @color-yellow;
-			border-bottom: 1px solid #252525;
-		}
+
 		// channels
-		a.buffer {
-			color: #777;
+		ul.buffers {
+
+			a.buffer {
+				color: #777;
+				border-left: 5px solid #1f1f1f;
+				margin-left: -5px;
+			}
+
+			a.buffer:hover {
+				background-color: fadeout(@primary-color-pale,60%);
+				color: #999;
+			}
+
+			.active a.buffer,
+			.active a.buffer:hover {
+				color: #fff;
+			}
+
 		}
-		a.buffer:hover {
-			background-color: rgba(62,119,119,0.4);
-			color: #999;
-		}
-		ul.buffers a.buffer {
-			border-left: 5px solid #1f1f1f;
-			margin-left: -5px;
-		}
-		.active a.buffer:hover {
-			color: #fff;
-		}
+
 		h2.unread, 
 		h2.active.unread, 
 		ul.buffers .unread a.buffer,
 		ul.buffers .active.unread a.buffer {
-			border-left: 5px solid rgba(62,119,119,1);
+			border-left: 5px solid @primary-color-pale;
 			font-weight: normal;
 		}
 
@@ -818,25 +915,30 @@ div.memberwrapper {
 			border-left-color: #566a6a;
 			font-weight: normal;    
 		}
+
 		.active.selected a.buffer,
 		.active.selected a.buffer:hover,
 		ul.buffers .active.selected a.buffer, 
 		ul.buffers .active.selected a.buffer:hover {
-			background-color: rgba(62,119,119,1);
+			background-color: @primary-color-pale;
 			color: #fff;
-			border-left-color: rgba(62,119,119,1);
+			border-left-color: @primary-color-pale;
 			font-weight: normal;
 		}
+
+		.selected span.label,
 		.selected.unread span.label {
 			padding-left: 7px;
 		}
+
 		h2.selected a.buffer {
 			border-bottom: 1px solid #333 !important;
+			padding-left: 22px;
 		}
 
 		h2, ul a,
 		li a.buffer {
-			transition: 0.4s background-color, 0.4s color, 0.4s border-color;
+			transition: 0.3s background-color, 0.3s color, 0.3s border-color;
 		}
 
 
@@ -848,7 +950,9 @@ div.memberwrapper {
 		p.archiveToggle a {
 			margin-top: 5px;
 		}
-		p.archiveToggle a:hover, p.openArchiveToggle a, p.openArchiveToggle a:hover {
+		p.archiveToggle a:hover, 
+		p.openArchiveToggle a, 
+		p.openArchiveToggle a:hover {
 			background-color: #444;
 			color: #aaa;
 		 
@@ -863,10 +967,11 @@ div.memberwrapper {
 		// add channel
 		p.join a {
 			color: #eee;
-		}
-		p.join a:hover {
-			background-color: rgba(62,119,119,0.4);
-			color: #fff;
+
+			&:hover {
+				background-color: fadeout(@primary-color-pale,60%);
+				color: #fff;
+			}
 		}
 
 	}
@@ -886,13 +991,13 @@ div.memberwrapper {
 		}
 		
 		p a:hover {
-			background-color: rgba(62,119,119,0.4);
+			background-color: fadeout(@primary-color-pale,60%);
 			border-bottom: 1px solid #252525;
 			color: #fff;
 		}
 		
 		p.selected a {
-			background-color: rgba(62,119,119,1);
+			background-color: @primary-color-pale;
 			border-bottom: 1px solid #252525;
 			font-weight: normal;
 		}
@@ -923,6 +1028,10 @@ div.memberwrapper {
 	p#reorderNetworks a:hover span.icon {
 		background-position: 1px -68px;
 		opacity: 1;
+	}
+
+	p#reorderNetworksHelp {
+		color: @primary-color
 	}
 
 
@@ -1060,7 +1169,15 @@ form.addNetworkForm {
 	background-color: #333;
 	box-shadow: 0 2px 15px rgba(0,0,0,0.5);
 	color: #eee;
- 
+ 	
+ 	h2 {
+ 		margin-top: 20px;
+ 		border-bottom: 1px solid rgba(255,255,255,0.2);
+ 	}
+
+ 	h2 + form {
+ 		margin-bottom: 30px;
+ 	}
 }
 
 #settingsDeleteAccount {
@@ -1107,9 +1224,18 @@ table.shortcuts kbd span {
 	border: 1px solid #609696;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 	color: #ccc;
-}
-.contextMenu a {
-	color: #fff;
+
+	a {
+		color: #fff;
+	}
+
+	.user {
+		color: #fff;
+	}
+
+	.info {
+		color: #aaa;
+	}
 }
 
 #channelContextMenu.active.mod ul.actions li a.topic,
@@ -1132,14 +1258,14 @@ table.shortcuts kbd span {
 #channelContextMenu ul.actions li a:hover,
 #memberContextMenu ul.actions li a:hover,
 .bufferContextMenu ul.actions li a:hover {
-	background-color: rgba(74,115,115,0.5) !important;
+	background-color: fadeout(@primary-color-pale,50%) !important;
 	cursor: pointer;
 }
 
 #channelContextMenu ul.actions li a:active,
 #memberContextMenu ul.actions li a:active,
 .bufferContextMenu ul.actions li a:active {
-	background-color: rgba(74,115,115,1) !important;
+	background-color: @primary-color-pale !important;
 }
 
 /* replace check image */
@@ -1168,7 +1294,7 @@ table.shortcuts kbd span {
 	display: block;
 	left: 7px;
 	position: absolute;
-	color: #a3ffff;
+	color: @color-teal-light;
 	font-size: 0.8em;
 	line-height: 18px;
 }
@@ -1179,7 +1305,7 @@ table.shortcuts kbd span {
 
 
 #channelContextMenu .modeLine {
-	border-top: 1px solid #609696;
+	border-top: 1px solid @primary-color-pale;
 }
 
 /* member context menu */
@@ -1187,10 +1313,10 @@ table.shortcuts kbd span {
 	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 	
 	div.userContext {
-		background-color: rgba(74,115,115,0.5);
+		background-color: fadeout(@primary-color-pale,50%);
 	}
 	ul.actions {
-		border-top: 1px solid #609696;
+		border-top: 1px solid @primary-color-pale;
 	}
 	input.message {
 		width: 100%;
@@ -1205,6 +1331,7 @@ table.shortcuts kbd span {
 div.log div.row span a.author,
 .nick-colors div.log div.row span a.author {
 	transition: 1s color, 0.2s border-color !important;
+	.font-set;
 }
 .nick-colors ul.memberList li a:hover {
 	transition: 0.2s color, 0.2s border-color !important;
@@ -1314,7 +1441,7 @@ td.nickcell a.nick {
 .nick-colors div.log div.row span a.hover.c11,
 .nick-colors div.log div.row span a.hover.c11:hover,
 .nick-colors ul.memberList li a.c11:hover,
-.nick-colors ul.memberList li.hover a.c11 { color: #82cbcb !important; }
+.nick-colors ul.memberList li.hover a.c11 { color: @color-teal-light !important; }
 
 .nick-colors div.log div.row span a.c12,
 .nick-colors div.log div.row span a.c12:hover,
