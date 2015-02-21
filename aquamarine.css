@@ -982,30 +982,32 @@
     transition: 0.5s height, 0.5s opacity;
   }
   /* -------------------------------------- PAGES -------------------------------------------------- */
-  .mainOverlayContent {
+  body.app {
+    /* add network page */
+  }
+  body.app .mainOverlayContent {
     background: #333;
     color: #eee;
     font-size: 14pt;
   }
-  /* add network page */
-  .mainContainer {
+  body.app .mainContainer {
     background-color: #333;
     color: #eee;
   }
-  form.addNetworkForm {
+  body.app form.addNetworkForm {
     background-color: #333;
   }
-  form.addNetworkForm h2 {
+  body.app form.addNetworkForm h2 {
     border-top-color: #666;
     font-weight: bold;
     color: #fff;
   }
-  form.addNetworkForm h2 a,
-  form.addNetworkForm h2 span {
+  body.app form.addNetworkForm h2 a,
+  body.app form.addNetworkForm h2 span {
     background-color: #333;
     color: #ccc;
   }
-  form.addNetworkForm h2 a:hover {
+  body.app form.addNetworkForm h2 a:hover {
     color: #fff;
   }
   /* settings */
