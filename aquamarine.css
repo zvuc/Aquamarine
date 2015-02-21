@@ -1,4 +1,6 @@
 @-moz-document url-prefix("https://www.irccloud.com/") {
+  @import "http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900";
+  
   /* 
  * IRCCloud Aquamarine Theme - 2015-02-21 
  * by Hansol Kim (zvuc) (http://xenosium.com) 
@@ -9,9 +11,14 @@
  * 
  * Copyright 2015 Hansol Kim; MIT License 
  */
+  /* Lato font load */
+  .font-set {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
+  }
   /* base */
   body.app {
     background-color: #1f1f1f;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
   }
   body.app #container {
     color: #eee;
@@ -58,7 +65,7 @@
     color: #82cbcb;
   }
   body.app a:hover {
-    color: #a3ffff;
+    color: #94d2d2;
   }
   body.app #footer a,
   body.app #headercell a,
@@ -70,7 +77,7 @@
   body.app #headercell a:hover,
   body.app #sidebar #limits a:hover,
   body.app h1#title a:hover {
-    color: #a3ffff;
+    color: #94d2d2;
   }
   body.app span.mode_ADMIN {
     color: #b777e0;
@@ -80,6 +87,11 @@
   }
   /* ---------------------------------------------------------------------------------------- */
   /* buttons, forms, autocomplete */
+  body.app button {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+  }
   body.app button span {
     background: #666;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
@@ -87,11 +99,15 @@
     color: #eee;
     -webkit-transition: 0.2s;
     transition: 0.2s;
+    padding: 0.3em 1em;
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
   body.app button:hover:not([disabled]) a,
   body.app button:hover:not([disabled]) span {
     background: #777;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
     border: 1px solid #777;
   }
   body.app button:active a,
@@ -109,37 +125,32 @@
     outline: none;
   }
   body.app button.action span {
-    background: #399494;
-    box-shadow: none;
-    border: 1px solid #3d9f9f;
+    background: #3e7777;
+    border: 1px solid #3e7777;
     color: #fff;
     -webkit-transition: 0.2s;
     transition: 0.2s;
   }
   body.app button.action:hover:not([disabled]) span {
-    background: #4ecccc;
-    box-shadow: none;
-    border: 1px solid #54ced6;
+    background: #478888;
+    border: 1px solid #478888;
   }
   body.app button.delete span {
     background: #ff3334;
-    box-shadow: none;
     border: 1px solid #ff3334;
     color: #fff;
     -webkit-transition: 0.2s;
     transition: 0.2s;
   }
   body.app button.delete:hover:not([disabled]) span {
-    background: #f2777a;
-    box-shadow: none;
-    border: 1px solid #f2777a;
+    background: #ff6667;
+    border: 1px solid #ff6667;
   }
   body.app button.active a,
   body.app button.active span,
   body.app button.active:hover a,
   body.app button.active:hover span {
-    background: #399494;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    background: #3e7777;
     border: 1px solid #54ced6;
   }
   body.app button.options.active span {
@@ -154,7 +165,17 @@
     color: #fff !important;
   }
   body.app button b.bullet {
-    color: #eee;
+    position: relative;
+    bottom: 3px;
+    margin-left: 3px;
+    display: inline-block;
+    color: transparent;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    border-top: 2px solid #eee;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
   }
   body.app .form .input {
     background: #1f1f1f;
@@ -180,7 +201,7 @@
   body.app a.ui-state-focus span.host,
   body.app a.ui-state-hover,
   body.app a.ui-state-hover span.host {
-    background-color: #4a7373;
+    background-color: #3e7777;
     color: #fff;
   }
   body.app .ui-menu-item a span.host {
@@ -199,8 +220,11 @@
     border-bottom: none;
   }
   .overlay_container_prompt .overlayHead {
-    background-image: -webkit-linear-gradient(top, #58acb1, #2e595c);
-    background-image: linear-gradient(to bottom, #58acb1, #2e595c);
+    background-image: -webkit-linear-gradient(top, #4f9999, #3e7777);
+    background-image: linear-gradient(to bottom, #4f9999, #3e7777);
+  }
+  .overlay_container_prompt .overlayHead a {
+    color: #fff;
   }
   .overlay_container_prompt .overlaycontents input.prompt {
     width: 100%;
@@ -215,11 +239,28 @@
   #statusActions strong {
     color: #fff;
   }
+  #statusActions a {
+    padding: 0 2px;
+  }
+  #statusActions span.numInvites {
+    background: #637171;
+    text-align: center;
+    padding: 1px 4px;
+    color: #fff;
+  }
   body.app h1#title span.logotype {
     color: #eee;
+    font-weight: bold;
+    padding-left: 2px;
   }
   body.app h1#title span.logotype span.cloud {
     color: #eee;
+    font-weight: normal;
+  }
+  body.app h1#title span.logotype span.beta {
+    color: #aaa;
+    font-weight: normal;
+    font-style: italic;
   }
   body.app .mainContainer,
   body.app table.buffer {
@@ -238,6 +279,12 @@
   }
   body.app div.buffermain {
     background-color: #333;
+  }
+  body.app td.statuscell div.status .buttons button {
+    padding: 0;
+  }
+  body.app td.statuscell div.status .buttons button span {
+    padding: 0.3em 1em;
   }
   body.app td.statuscell div.status h2.bufferHeading span.label {
     color: #fff;
@@ -283,6 +330,11 @@
     box-shadow: none;
     border-top: 1px solid #444;
     border-bottom: 1px solid #222;
+    font-style: italic;
+  }
+  div.dateWrapper .clockcell {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
   }
   /* nick colors (Default) */
   div.log span a.user,
@@ -350,13 +402,16 @@
   div.log div.bottomSeen hr,
   div.log div.focusSeen hr,
   div.log div.lastSeen hr {
-    border-top: 1px solid #666;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
   div.log div.bottomSeen span,
   div.log div.focusSeen span,
   div.log div.lastSeen span.text {
     background-color: #1f1f1f;
     color: #ffcc66;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-style: italic;
   }
   div.log div.backlogDivider hr,
   div.log div.fetch hr {
@@ -467,7 +522,7 @@
   }
   /* input info (autocomplete) */
   .inputInfo {
-    border: 2px solid #3d9f9f;
+    border: 2px solid #3e7777;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     background-image: -webkit-linear-gradient(top, #444444, #333333);
     background-image: linear-gradient(to bottom, #444444, #333333);
@@ -480,7 +535,7 @@
   }
   .inputInfo span.highlight,
   .inputInfo span.item:hover {
-    background-color: #3d9f9f;
+    background-color: #3e7777;
   }
   /* connection message */
   .connectionStatus {
@@ -496,8 +551,8 @@
     border-color: #ccc;
   }
   .connectionStatus a:hover {
-    background-color: #587b7b;
-    border-color: #609696;
+    background-color: #3e7777;
+    border-color: #3e7777;
     color: #fff;
   }
   .connectionStatus a span {
@@ -515,8 +570,8 @@
   .connectionStatus.edit a:hover,
   .connectionStatus.reconnect a:hover,
   .connectionStatus.upgrade a:hover {
-    background-color: #587b7b;
-    border-color: #609696;
+    background-color: #6f7f7f;
+    border-color: #6f7f7f;
     color: #fff;
   }
   .connectionStatus.disconnect span[class],
@@ -548,7 +603,7 @@
   }
   .connectionStatus.fail {
     background-image: none;
-    background-color: #f8df26;
+    background-color: #ffcc66;
     border-color: #ffcc66;
     color: #632800;
   }
@@ -622,169 +677,185 @@
     color: #888;
   }
   /* ------------------------------ sidebar -------------------------------------------- */
-  #sidebar #limits a,
-  #sidebar #limits a:hover {
+  #sidebarwrapper #limits a,
+  #sidebarwrapper #limits a:hover {
     background: #333;
     color: #eee !important;
   }
-  #sidebar #limits a span.highlight {
+  #sidebarwrapper #limits a span.highlight {
     color: #82cbcb !important;
   }
-  #sidebar #limits h2,
-  #sidebar #limits h2:hover {
+  #sidebarwrapper #limits h2,
+  #sidebarwrapper #limits h2:hover {
     background: #6699cc !important;
     border-radius: 0 !important;
     color: #fff;
   }
-  #sidebar #limits h2.limitedTrial {
+  #sidebarwrapper #limits h2.limitedTrial {
     background: #ff3334 !important;
   }
-  #sidebar #limits span.trialRemain {
+  #sidebarwrapper #limits span.trialRemain {
     background-color: #333;
   }
-  #sidebar #limits .price .badge {
+  #sidebarwrapper #limits .price .badge {
     background: #ff3334;
   }
-  #sidebar #buffers li.connection {
+  #sidebarwrapper #buffers li.connection {
     background: #333;
   }
-  #sidebar #buffers .active a.buffer {
+  #sidebarwrapper #buffers .active a.buffer {
     color: #eee;
   }
-  #sidebar #buffers h2 a.buffer {
+  #sidebarwrapper #buffers h2 a.buffer {
+    color: #777;
     background-color: #444;
     border-bottom: 1px solid #252525;
   }
-  #sidebar #buffers h2.failed a.buffer:hover {
-    color: #915433;
-    background-color: #ffcc66;
+  #sidebarwrapper #buffers h2 a.buffer:hover {
+    background-color: #555;
   }
-  #sidebar #buffers h2.failed.selected a.buffer,
-  #sidebar #buffers h2.failed.selected a.buffer:hover {
+  #sidebarwrapper #buffers h2.failed a.buffer,
+  #sidebarwrapper #buffers h2.failed a.buffer:hover,
+  #sidebarwrapper #buffers h2.failed a.buffer .label {
+    background-color: #ffcc66;
+    color: #915433;
+    opacity: 0.8;
+  }
+  #sidebarwrapper #buffers h2.failed.selected a.buffer,
+  #sidebarwrapper #buffers h2.failed.selected a.buffer:hover {
+    padding-left: 29px;
     background-color: #ffcc66;
     border-bottom: 1px solid #252525;
+    opacity: 1;
   }
-  #sidebar #buffers a.buffer {
+  #sidebarwrapper #buffers h2.failed.selected a.buffer span.label {
+    padding-left: 0;
+  }
+  #sidebarwrapper #buffers ul.buffers a.buffer {
     color: #777;
-  }
-  #sidebar #buffers a.buffer:hover {
-    background-color: rgba(62, 119, 119, 0.4);
-    color: #999;
-  }
-  #sidebar #buffers ul.buffers a.buffer {
     border-left: 5px solid #1f1f1f;
     margin-left: -5px;
   }
-  #sidebar #buffers .active a.buffer:hover {
+  #sidebarwrapper #buffers ul.buffers a.buffer:hover {
+    background-color: rgba(62, 119, 119, 0.4);
+    color: #999;
+  }
+  #sidebarwrapper #buffers ul.buffers .active a.buffer,
+  #sidebarwrapper #buffers ul.buffers .active a.buffer:hover {
     color: #fff;
   }
-  #sidebar #buffers h2.unread,
-  #sidebar #buffers h2.active.unread,
-  #sidebar #buffers ul.buffers .unread a.buffer,
-  #sidebar #buffers ul.buffers .active.unread a.buffer {
+  #sidebarwrapper #buffers h2.unread,
+  #sidebarwrapper #buffers h2.active.unread,
+  #sidebarwrapper #buffers ul.buffers .unread a.buffer,
+  #sidebarwrapper #buffers ul.buffers .active.unread a.buffer {
     border-left: 5px solid #3e7777;
     font-weight: normal;
   }
-  #sidebar #buffers .selected a.buffer,
-  #sidebar #buffers .selected a.buffer:hover,
-  #sidebar #buffers ul.buffers .selected a.buffer,
-  #sidebar #buffers ul.buffers .selected a.buffer:hover {
+  #sidebarwrapper #buffers .selected a.buffer,
+  #sidebarwrapper #buffers .selected a.buffer:hover,
+  #sidebarwrapper #buffers ul.buffers .selected a.buffer,
+  #sidebarwrapper #buffers ul.buffers .selected a.buffer:hover {
     background-color: #566a6a;
     color: #fff;
     border-left-color: #566a6a;
     font-weight: normal;
   }
-  #sidebar #buffers .active.selected a.buffer,
-  #sidebar #buffers .active.selected a.buffer:hover,
-  #sidebar #buffers ul.buffers .active.selected a.buffer,
-  #sidebar #buffers ul.buffers .active.selected a.buffer:hover {
+  #sidebarwrapper #buffers .active.selected a.buffer,
+  #sidebarwrapper #buffers .active.selected a.buffer:hover,
+  #sidebarwrapper #buffers ul.buffers .active.selected a.buffer,
+  #sidebarwrapper #buffers ul.buffers .active.selected a.buffer:hover {
     background-color: #3e7777;
     color: #fff;
     border-left-color: #3e7777;
     font-weight: normal;
   }
-  #sidebar #buffers .selected.unread span.label {
+  #sidebarwrapper #buffers .selected span.label,
+  #sidebarwrapper #buffers .selected.unread span.label {
     padding-left: 7px;
   }
-  #sidebar #buffers h2.selected a.buffer {
+  #sidebarwrapper #buffers h2.selected a.buffer {
     border-bottom: 1px solid #333 !important;
+    padding-left: 22px;
   }
-  #sidebar #buffers h2,
-  #sidebar #buffers ul a,
-  #sidebar #buffers li a.buffer {
-    -webkit-transition: 0.4s background-color, 0.4s color, 0.4s border-color;
-    transition: 0.4s background-color, 0.4s color, 0.4s border-color;
+  #sidebarwrapper #buffers h2,
+  #sidebarwrapper #buffers ul a,
+  #sidebarwrapper #buffers li a.buffer {
+    -webkit-transition: 0.3s background-color, 0.3s color, 0.3s border-color;
+    transition: 0.3s background-color, 0.3s color, 0.3s border-color;
   }
-  #sidebar #buffers ul.conversations {
+  #sidebarwrapper #buffers ul.conversations {
     margin-top: 5px;
   }
-  #sidebar #buffers p.archiveToggle a {
+  #sidebarwrapper #buffers p.archiveToggle a {
     margin-top: 5px;
   }
-  #sidebar #buffers p.archiveToggle a:hover,
-  #sidebar #buffers p.openArchiveToggle a,
-  #sidebar #buffers p.openArchiveToggle a:hover {
+  #sidebarwrapper #buffers p.archiveToggle a:hover,
+  #sidebarwrapper #buffers p.openArchiveToggle a,
+  #sidebarwrapper #buffers p.openArchiveToggle a:hover {
     background-color: #444;
     color: #aaa;
   }
-  #sidebar #buffers ul.archives {
+  #sidebarwrapper #buffers ul.archives {
     background-color: #1a1a1a;
   }
-  #sidebar #buffers ul.archives.archives a:hover {
+  #sidebarwrapper #buffers ul.archives.archives a:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
-  #sidebar #buffers p.join a {
+  #sidebarwrapper #buffers p.join a {
     color: #eee;
   }
-  #sidebar #buffers p.join a:hover {
+  #sidebarwrapper #buffers p.join a:hover {
     background-color: rgba(62, 119, 119, 0.4);
     color: #fff;
   }
-  #sidebar div#buffersFooter p {
+  #sidebarwrapper div#buffersFooter p {
     background-color: #444;
   }
-  #sidebar div#buffersFooter p a {
+  #sidebarwrapper div#buffersFooter p a {
     background-color: #444;
     border-bottom: 1px solid #252525;
     color: #fff;
     -webkit-transition: 0.3s background-color;
     transition: 0.3s background-color;
   }
-  #sidebar div#buffersFooter p a:hover {
+  #sidebarwrapper div#buffersFooter p a:hover {
     background-color: rgba(62, 119, 119, 0.4);
     border-bottom: 1px solid #252525;
     color: #fff;
   }
-  #sidebar div#buffersFooter p.selected a {
+  #sidebarwrapper div#buffersFooter p.selected a {
     background-color: #3e7777;
     border-bottom: 1px solid #252525;
     font-weight: normal;
   }
-  #sidebar div#buffersFooter p#addNetwork.selected a {
+  #sidebarwrapper div#buffersFooter p#addNetwork.selected a {
     padding-left: 29px;
     background-position: 9px 4px;
   }
-  #sidebar #buffers h2 span.drag,
-  #sidebar p#reorderNetworks span.icon {
+  #sidebarwrapper #buffers h2 span.drag,
+  #sidebarwrapper p#reorderNetworks span.icon {
     background-position: 1px -68px;
     opacity: 0.5;
     -webkit-transition: 0.3s opacity;
     transition: 0.3s opacity;
   }
-  #sidebar #buffers h2.active span.drag,
-  #sidebar p#reorderNetworks span.icon {
+  #sidebarwrapper #buffers h2.active span.drag,
+  #sidebarwrapper p#reorderNetworks span.icon {
     background-position: 1px -68px;
     opacity: 0.8;
   }
-  #sidebar #buffers h2 a:hover span.drag {
+  #sidebarwrapper #buffers h2 a:hover span.drag {
     background-position: 1px -68px;
     opacity: 0.8;
   }
-  #sidebar #buffers h2.active a:hover span.drag,
-  #sidebar #buffers h2.active.selected a:hover span.drag,
-  #sidebar p#reorderNetworks a:hover span.icon {
+  #sidebarwrapper #buffers h2.active a:hover span.drag,
+  #sidebarwrapper #buffers h2.active.selected a:hover span.drag,
+  #sidebarwrapper p#reorderNetworks a:hover span.icon {
     background-position: 1px -68px;
     opacity: 1;
+  }
+  #sidebarwrapper p#reorderNetworksHelp {
+    color: #82cbcb;
   }
   @-webkit-keyframes color-pulse {
     0% {
@@ -802,12 +873,12 @@
       border-left-color: #3e7777;
     }
   }
-  #sidebar #buffers ul.buffers .activeBadge.unread a.buffer {
+  #sidebarwrapper #buffers ul.buffers .activeBadge.unread a.buffer {
     border-left-color: #ff3334;
     -webkit-animation: color-pulse 1s ease-in infinite alternate;
     animation: color-pulse 1s ease-in infinite alternate;
   }
-  #sidebar #buffers span.badge {
+  #sidebarwrapper #buffers span.badge {
     min-width: 11px;
     height: 15px;
     text-align: center;
@@ -817,10 +888,10 @@
     border: none;
     color: #fff;
   }
-  #sidebar #footer {
+  #sidebarwrapper #footer {
     color: #aaa;
   }
-  #sidebar #footer p:first-child {
+  #sidebarwrapper #footer p:first-child {
     height: 25px;
     overflow: hidden;
     -webkit-transition: 0.3s;
@@ -830,11 +901,11 @@
     padding: 5px 10px;
     box-sizing: border-box;
   }
-  #sidebar #footer p:first-child a {
+  #sidebarwrapper #footer p:first-child a {
     border-bottom: 1px solid #333;
     padding: 1px 2px;
   }
-  #sidebar #footer p:first-child:before {
+  #sidebarwrapper #footer p:first-child:before {
     content: "IRCCloud Links";
     display: block;
     background: #333;
@@ -849,24 +920,24 @@
     padding: 5px 10px;
     box-sizing: border-box;
   }
-  #sidebar #footer p:first-child:hover {
+  #sidebarwrapper #footer p:first-child:hover {
     height: 220px;
   }
-  #sidebar #footer p:first-child:hover a {
+  #sidebarwrapper #footer p:first-child:hover a {
     position: relative;
     z-index: 2;
   }
-  #sidebar #footer p:first-child:hover:before {
+  #sidebarwrapper #footer p:first-child:hover:before {
     content: "Hover to view links";
     display: block;
     opacity: 1;
     top: -25px;
     z-index: 1;
   }
-  #sidebar #footer br {
+  #sidebarwrapper #footer br {
     margin-bottom: 5px;
   }
-  #sidebar .sidebarIndicator {
+  #sidebarwrapper .sidebarIndicator {
     display: block !important;
     height: 0;
     -webkit-transition: 0.5s height, 0.5s opacity;
@@ -874,12 +945,12 @@
     border: none !important;
     background: #54ced6;
   }
-  #sidebar .sidebarIndicator[style^="display: none"] {
+  #sidebarwrapper .sidebarIndicator[style^="display: none"] {
     display: block !important;
     height: 0;
     opacity: 0 !important;
   }
-  #sidebar .sidebarIndicatorUnread {
+  #sidebarwrapper .sidebarIndicatorUnread {
     opacity: 1 !important;
     height: 10px !important;
     -webkit-transition: 0.5s height, 0.5s opacity;
@@ -917,6 +988,13 @@
     background-color: #333;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
     color: #eee;
+  }
+  .accountContainer h2 {
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .accountContainer h2 + form {
+    margin-bottom: 30px;
   }
   #settingsDeleteAccount {
     border: 2px solid #ff3334;
@@ -960,6 +1038,12 @@
   .contextMenu a {
     color: #fff;
   }
+  .contextMenu .user {
+    color: #fff;
+  }
+  .contextMenu .info {
+    color: #aaa;
+  }
   #channelContextMenu.active.mod ul.actions li a.topic,
   #memberContextMenu ul.actions li a,
   .bufferContextMenu ul.actions li a.delete,
@@ -981,13 +1065,13 @@
   #channelContextMenu ul.actions li a:hover,
   #memberContextMenu ul.actions li a:hover,
   .bufferContextMenu ul.actions li a:hover {
-    background-color: rgba(74, 115, 115, 0.5) !important;
+    background-color: rgba(62, 119, 119, 0.5) !important;
     cursor: pointer;
   }
   #channelContextMenu ul.actions li a:active,
   #memberContextMenu ul.actions li a:active,
   .bufferContextMenu ul.actions li a:active {
-    background-color: #4a7373 !important;
+    background-color: #3e7777 !important;
   }
   /* replace check image */
   #channelContextMenu ul.actions li.notifyAll a,
@@ -1014,7 +1098,7 @@
     display: block;
     left: 7px;
     position: absolute;
-    color: #a3ffff;
+    color: #82cbcb;
     font-size: 0.8em;
     line-height: 18px;
   }
@@ -1022,17 +1106,17 @@
     margin-top: -1px;
   }
   #channelContextMenu .modeLine {
-    border-top: 1px solid #609696;
+    border-top: 1px solid #3e7777;
   }
   /* member context menu */
   #memberContextMenu {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   }
   #memberContextMenu div.userContext {
-    background-color: rgba(74, 115, 115, 0.5);
+    background-color: rgba(62, 119, 119, 0.5);
   }
   #memberContextMenu ul.actions {
-    border-top: 1px solid #609696;
+    border-top: 1px solid #3e7777;
   }
   #memberContextMenu input.message {
     width: 100%;
@@ -1044,6 +1128,7 @@
   .nick-colors div.log div.row span a.author {
     -webkit-transition: 1s color, 0.2s border-color !important;
     transition: 1s color, 0.2s border-color !important;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
   }
   .nick-colors ul.memberList li a:hover {
     -webkit-transition: 0.2s color, 0.2s border-color !important;
