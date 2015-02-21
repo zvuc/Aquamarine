@@ -1,0 +1,34 @@
+/* move sidebar to left */
+div#sidebarwrapper {
+	right: inherit;
+	left: 0;
+	bottom: 0;
+	top: inherit;
+	height: ~"calc(100% - 37px)";
+}
+div#sidebar {
+	box-sizing: border-box;
+}
+div#sidebar #buffers {
+	margin: 0 10px;
+}
+#mainwrapper {
+	padding-right: 0;
+	padding-left: 201px;
+}
+#timeContainer {
+	left: 201px !important;
+}
+h1#title {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #1f1f1f;
+	display: block;
+	height: 27px;
+	padding: 10px 0 0 5px;
+	margin-top:0;
+}
+#headercell {
+	padding-right: 10px;
+}

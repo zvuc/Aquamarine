@@ -1,0 +1,1341 @@
+// Colors
+@color-red: #ff3334;
+@color-yellow: #ffcc66;
+@color-green: #9ec400;
+@color-teal: #54ced6;
+@color-blue: #6699cc;
+@color-purple: #b777e0;
+@color-brown: #b09276;
+
+@color-yellow-brighter: #f8df26;
+
+
+/* base */
+body.app {
+	background-color: #1f1f1f;
+
+	#container {
+		color: #eee;
+	}
+
+	// scrollbars
+	::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track-piece { border-radius: 0; }
+	::-webkit-scrollbar { width: 8px; }
+	::-webkit-scrollbar:hover { opacity: 1; }
+	::-webkit-scrollbar-thumb { background-color: #888; border: 0; border-radius: 10px; }
+	::-webkit-scrollbar-track-piece { background-color: transparent; border: 0; }
+	::-webkit-scrollbar-thumb:window-inactive { background-color: #555; }
+
+	// global font color reset
+	div.log div.chat, 
+	div.log div.error, 
+	div.log div.groupedLines, 
+	div.log div.me, 
+	div.log div.notice, 
+	div.log div.status, 
+	div.log div.table, 
+	div.log div.warning {
+		color: #fff;
+	}
+	.explanation {
+		color: #ccc;
+	}
+	hr {
+		border-color: #666;
+	}
+
+	// links
+	a { color: #82cbcb; }
+	a:hover { color: #a3ffff; }
+
+	#footer a, #headercell a, #sidebar #limits a, h1#title a {
+		color: #82cbcb;
+	}
+	#footer a:hover, #headercell a:hover, #sidebar #limits a:hover, h1#title a:hover {
+		color: #a3ffff;
+	}
+
+	// mode icons colorset
+	span.mode_ADMIN {
+		color: @color-purple;
+	}
+	span.mode_OP {
+		color: @color-red;
+	}
+
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* buttons, forms, autocomplete */
+body.app {
+
+	// global button
+	button {
+
+		span {
+			background: #666;
+			box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+			border: 1px solid #666;
+			color: #eee;
+			transition: 0.2s;
+		}
+
+		&:hover:not([disabled]) a, 
+		&:hover:not([disabled]) span {
+			background: #777;
+			box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+			border: 1px solid #777;
+		}
+
+		&:active a, 
+		&:active span {
+			left: 0;
+			top: 0;
+			background-color: @color-teal !important;
+			border: 1px solid @color-teal !important;
+			transition: none;
+			color: #fff !important;
+		}
+
+		&:focus a, 
+		&:focus span {
+			outline: none;
+		}
+		
+		// action button
+		&.action span {
+			background: #399494;
+			box-shadow: none;
+			border: 1px solid #3d9f9f;
+			color: #fff;
+			transition: 0.2s;
+		}
+
+		&.action:hover:not([disabled]) span {
+			background: #4ecccc;
+			box-shadow: none;
+			border: 1px solid @color-teal;
+		}
+
+		// delete button
+		&.delete span {
+			background: @color-red;
+			box-shadow: none;
+			border: 1px solid @color-red;
+			color: #fff;
+			transition: 0.2s;
+		}
+
+		&.delete:hover:not([disabled]) span {
+			background: #f2777a;
+			box-shadow: none;
+			border: 1px solid #f2777a;
+		}
+
+		&.active a, 
+		&.active span, 
+		&.active:hover a, 
+		&.active:hover span {
+			background: #399494;
+			box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+			border: 1px solid @color-teal;
+		}
+
+		&.options.active span {
+			border-bottom: none;
+		}
+
+		&.delete:active a, 
+		&.delete:active span {
+			background-color: @color-red !important;
+			border: 1px solid @color-red !important;
+			transition: none;
+			color: #fff !important;
+		}
+
+		// caret
+		b.bullet {
+			color: #eee;
+		}
+
+	}
+
+	// global form
+	.form {
+
+		.input {
+			background: #1f1f1f;
+			color: #eee;
+			border: 2px solid rgba(119,119,119,0.5);
+			transition: 0.2s border-color;
+			padding: 5px 7px;
+		
+			&:focus {
+				border: 2px solid @color-teal;
+				margin: 0;
+				padding: 5px 7px;
+			}
+		}
+
+	}
+
+	// autocomplete
+	.ui-autocomplete {
+		border-color: @color-teal;
+		background: #222;
+	}
+
+	.ui-menu-item a {
+		border-top: 1px solid #333;
+	}
+
+	a.ui-state-focus, a.ui-state-focus span.host, a.ui-state-hover, a.ui-state-hover span.host {
+		background-color: rgba(74,115,115,1);
+		color: #fff;
+	}
+
+	.ui-menu-item a span.host {
+		color: #ccc;
+	}
+
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* overlay container */
+.editNetworkOverlay, .overlaycontainer {
+	background-color: #444;
+	border-color: #666;
+}
+
+.overlayHead {
+	background-image: linear-gradient(to bottom, #777, #aaa);
+	border-bottom: none;
+}
+
+.overlay_container_prompt {
+
+	.overlayHead {
+		background-image: linear-gradient(to bottom, #58acb1, #2e595c);
+	}
+
+	.overlaycontents input.prompt {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+}
+
+
+/* ---------------------------------------------------------------------------------------- */
+
+
+/* header */
+#statusActions {
+	color: #666;
+
+	b, strong {
+		color: #fff;
+	}
+}
+
+body.app {
+	// page title
+	h1#title span.logotype {
+		color: #eee;
+
+		span.cloud {
+			color: #eee;
+		}
+	}
+
+	// main panel
+	.mainContainer, table.buffer {
+		border-radius: 0;
+		border-left: 1px solid #333;
+		border-top: 1px solid #444;
+		border-right: 1px solid #333;
+		border-bottom: 0;
+	}
+	.bufferHead {
+		background-color: #333;
+		border-top: 0;
+		border-left: 0;
+		border-bottom: 1px solid #1f1f1f;
+		border-radius: 0;
+	}
+	div.buffermain {
+		background-color: #333;
+	}
+
+	// topic
+	td.statuscell div.status {
+
+		h2.bufferHeading {
+
+			span.label {
+				color: #fff;
+				font-size: 1.4em;
+				font-weight: 300;
+				line-height: 1em;
+				padding-right: 10px;
+			}
+			 span.topic {
+				color: #bbb;
+			}
+		}
+
+		.identity {
+			margin: 10px 0 0 0;
+		}
+
+	}
+}
+
+/* ------------------------------ message part -------------------------------------------- */
+
+div.scroll {
+	background-color: #1f1f1f;
+}
+
+/* links */
+div#searchResults div.searchResultDate a {
+	color: #82cbcb;
+}
+
+div.log {
+	div.chat a,
+	div.error a,
+	div.groupedLines a,
+	div.me a,
+	div.notice a,
+	div.status a,
+	div.table a,
+	div.warning a {
+		color: #82cbcb;
+	}
+}
+
+
+/* message log bg */
+div.log {
+	background: #1f1f1f;
+}
+
+/* date wrapper */
+div.dateWrapper table {
+	background-image: linear-gradient(to bottom, #333, #2f2f2f);
+	color: #eee;
+	box-shadow: none;
+	border-top: 1px solid #444;
+	border-bottom: 1px solid #222; 
+}
+
+/* nick colors (Default) */
+div.log {
+
+	span a.user,
+	span a.server {
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255,255,255,0.2);
+	}
+
+	div.row span a.server.hover,
+	div.row span a.server.hover:hover,
+	div.row span a.server:hover,
+	div.row span a.user.hover,
+	div.row span a.user.hover:hover,
+	div.row span a.user:hover {
+		color: #fff;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255,255,255,0.5);
+		transition: 0.2s;
+	}
+
+	div.row span a.author {
+		color: @color-purple;
+		transition: 0.2s;
+		border-bottom: 1px solid rgba(0,0,0,0);
+	}
+
+	div.self {
+		background: #2a2a2a;
+	}
+
+	div.row.self span a.author {
+		color: @color-teal;
+		/*[[nick_color]]*/
+	}
+
+	div.row span a.author.hover,
+	div.row span a.author.hover:hover,
+	div.row span a.author:hover {
+		color: @color-purple;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255,255,255,0.5) !important;
+	}
+
+	div.row.self span a.author:hover,
+	div.row.self span a.author.hover,
+	div.row.self span a.author.hover:hover {
+		text-decoration: none;
+		border-bottom: 1px solid #aaa;
+		color: @color-teal;
+		/*[[nick_color]]*/
+	}
+
+
+	// highlights
+	div.row.highlight {
+		background-color: #313b3b;
+	}
+	div.highlight span.date,
+	div.searchMatch span.date {
+		color: #82cbcb;
+	}
+	div.groupedLines {
+		background-color: #313b3b;
+		border-color: #82cbcb;
+	}
+	div.notice {
+		background-color: #39352c;
+	}
+	div.warning {
+		background-color: #5f3232;
+	}
+
+	// tab out messages
+	div.bottomSeen hr,
+	div.focusSeen hr,
+	div.lastSeen hr {
+		border-top: 1px solid #666;
+	}
+	div.bottomSeen span,
+	div.focusSeen span,
+	div.lastSeen span.text {
+		background-color: #1f1f1f;
+		color: @color-yellow;
+	}
+
+	// backlog divider
+	div.backlogDivider hr,
+	div.fetch hr {
+		border-color: #82cbcb;
+	}
+
+
+	// part divider
+	div.part hr {
+		border-top: 4px double #333;
+	}
+
+
+	// date change
+	div.dateChange p {
+		&:extend(div.dateWrapper table);
+	}
+
+
+	// fetch message
+	div.fetch span {
+			background-color: #1f1f1f;
+			color: #eee;
+	}
+
+	// timestamp color when hover on username
+	div.hover span.date {
+		color: #eee;
+	}
+	div span.date {
+		transition: 0.2s color;
+	}
+
+	// status, join-part messages
+	div.messageRow {
+		transition: 0.2s;
+	}
+	div.messageRow.status {
+		background-color: #333;
+		opacity: 1;
+	}
+	div.messageRow.status:hover {
+		opacity: 1;
+	}
+	div.groupedDisco, div.groupedJoinPart {
+		border-bottom: 1px solid #1f1f1f;
+		border-top: 1px solid #1f1f1f;
+		background-color: #1f1f1f;
+		opacity: 0.5;
+	}
+
+	div.groupedDisco:hover, div.groupedJoinPart:hover {
+		border-bottom: 1px solid #333;
+		border-top: 1px solid #333;
+		background-color: #121212;
+		opacity: 1;
+	}
+
+	div.groupedDisco.expanded, div.groupedJoinPart.expanded {
+		border-bottom: 1px solid #1f1f1f;
+		border-top: 1px solid #444;
+		background-color: #121212;
+		opacity: 1;
+	}
+
+	div.joinPartGroup.expanded {
+		border-bottom: 1px solid #444;
+		background-color: #1f1f1f;
+		opacity: 1;
+	}
+
+	div.joinPartGroup div.messageRow, div.joinPartGroup.expanded div.messageRow {
+		background-color: #161616;
+	}
+
+
+	// various msg text
+	div.groupedJoinPart span.mode, span.prefix {
+		color: #ddd;
+	}
+
+}
+
+/* extras bar */
+.extras span {
+	&.extrasBar {
+		background-color: #3f6262;
+	}
+	&.extrasBar:hover {
+		background-color: #2e4747;
+	}
+	&.extrasDismiss {
+		background-color: #3e989e;
+	}
+	&.extrasDismiss:hover {
+		background-color: #31777c;
+	}
+}
+
+/* msg input box */
+td.bufferinputcell {
+	border-top: 1px solid #222;
+	transition: 0.3s background-color;
+
+	div.nickinputwrapper {
+		border: none !important;
+		border-radius: 2px;
+		background-color: #1f1f1f;
+		padding: 2px 0 2px 0;
+		margin: 8px 10px 8px 0;
+	 
+	}
+	td.nickcell {
+		background: #1f1f1f;
+		border: none !important;
+		border-radius: 2px 0 0 2px;
+	}
+	td.inputcell {
+		background: #1f1f1f;
+		border-radius: 0 2px 2px 0;
+		border: none !important;
+		box-shadow: none;
+	}
+	td.inputcell textarea {
+		background: #1f1f1f;
+		color: #eee;
+	}
+	.away & {
+		background: #666;
+	}
+}
+
+/* input info (autocomplete) */
+.inputInfo {
+	border: 2px solid #3d9f9f;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+	background-image: linear-gradient(to bottom, #444, #333);
+	
+	span.item a {
+		color: #eee;
+	}
+	span.original {
+		color: #82cbcb;
+	}
+	span.highlight, span.item:hover {
+		background-color: #3d9f9f;
+	}
+}
+
+
+/* connection message */
+.connectionStatus {
+	background-image: none;
+	background-color: #637171;
+	border-color: #637171;
+	color: #eee;
+	border-width: 0;
+	
+ 
+	a {
+		transition: 0.3s background-color;
+		border-color: #ccc;
+	
+		&:hover {
+			background-color: #587b7b;
+			border-color: #609696;
+			color: #fff;
+		}
+
+		span {
+			float: right;
+		}
+
+	}
+
+	&.disconnect,
+	&.edit,
+	&.reconnect,
+	&.upgrade {
+		a {
+			background-color: #637171;
+			border-color: #637171;
+			color: #eee;
+		}
+		a:hover {
+			background-color: #587b7b;
+			border-color: #609696;
+			color: #fff;
+		}
+
+		span[class] {
+			color: #a0cbcb;
+		}
+		a:hover span[class] {
+			color: #82cbcb;
+		}
+	}
+
+	// away
+	&.away {
+		a {
+			background-color: #666;
+			border-color: #777;
+			color: #eee;
+		}
+		a:hover {
+			background-color: #777;
+			color: #fff;
+		}
+
+		span.back {
+			color: #aaa;
+		}
+
+		a:hover span.back {
+			color: #ccc;
+		}
+	}
+
+	// fail
+	&.fail {
+		background-image: none;
+		background-color: @color-yellow-brighter;
+		border-color: @color-yellow;
+		color: #632800;
+		
+		a, a:hover {
+			background: none;
+			border-color: #dbb300;
+			color: #632800;
+		}
+
+		span[class] {
+			color: #dbb300;
+		}
+
+		a span[class] {
+			color: #632800 !important;
+		}
+	}
+}
+
+/* channel list */
+.overlay table thead td, .overlay table thead th {
+	background: #333;
+}
+.overlay table td, .overlay table th {
+	border-left-color: #222;
+}
+.overlayTable tr.even td {
+	background: #393939;
+}
+
+/* ------------------------------ member list -------------------------------------------- */
+
+
+div.memberwrapper {
+	background-color: #222;
+	color: #eee;
+	border-color: #1f1f1f;
+
+	ul.memberList {
+		a {
+			color: #ddd;
+			transition: 0.2s;
+			border-bottom: 1px solid rgba(0,0,0,0);
+		}
+
+		&.memberList li ul {
+			border-bottom: 1px solid #1f1f1f;
+			font-size: 0.9em;
+		}
+
+		li.owner h2, 
+		li.owner ul {
+			background: rgba(231,170,0,0.1);
+		}
+
+		li.admin h2, 
+		li.admin ul {
+			background: rgba(101,0,165,0.1);
+		}
+
+		li.admin h2 {
+			color: @color-purple;
+		}
+
+		li.ops h2, li.ops ul {
+			background: rgba(186,23,25,0.1);
+		}
+
+		li.ops h2 {
+			color: @color-red;
+		}
+
+		li.halfops h2, 
+		li.halfops ul {
+			background: rgba(181,89,0,0.1);
+		}
+
+		li.voiced h2, 
+		li.voiced ul {
+			background: rgba(37,177,0,0.1);
+		}
+
+		li.user a.away {
+			color: #888;
+		}
+	}
+}
+
+/* ------------------------------ sidebar -------------------------------------------- */
+
+#sidebar {
+
+	// trial notice
+	#limits {
+
+		a, a:hover {
+			background: #333;
+			color: #eee !important;
+		}
+		a span.highlight {
+			color: #82cbcb !important;
+		}
+
+		h2, h2:hover {
+			background: @color-blue !important;
+			border-radius: 0 !important;
+			color: #fff;
+		}
+
+		h2.limitedTrial {
+			background: @color-red !important;
+		}
+
+		span.trialRemain {
+			background-color: #333;
+		}
+
+		.price .badge {
+			background: @color-red;
+		}
+	}
+
+	// channel list
+	#buffers {
+		li.connection {
+			background: #333;
+		}
+		.active a.buffer {
+			color: #eee;
+		}
+
+		// network header
+		h2 a.buffer {
+			background-color: #444;
+			border-bottom: 1px solid #252525;
+		}
+		h2.failed a.buffer:hover {
+			color: #915433;
+			background-color: @color-yellow;
+		}
+		h2.failed.selected a.buffer, h2.failed.selected a.buffer:hover {
+			background-color: @color-yellow;
+			border-bottom: 1px solid #252525;
+		}
+		// channels
+		a.buffer {
+			color: #777;
+		}
+		a.buffer:hover {
+			background-color: rgba(62,119,119,0.4);
+			color: #999;
+		}
+		ul.buffers a.buffer {
+			border-left: 5px solid #1f1f1f;
+			margin-left: -5px;
+		}
+		.active a.buffer:hover {
+			color: #fff;
+		}
+		h2.unread, 
+		h2.active.unread, 
+		ul.buffers .unread a.buffer,
+		ul.buffers .active.unread a.buffer {
+			border-left: 5px solid rgba(62,119,119,1);
+			font-weight: normal;
+		}
+
+		// selected channel
+		.selected a.buffer,
+		.selected a.buffer:hover,
+		ul.buffers .selected a.buffer, 
+		ul.buffers .selected a.buffer:hover {
+			background-color: #566a6a;
+			color: #fff;
+			border-left-color: #566a6a;
+			font-weight: normal;    
+		}
+		.active.selected a.buffer,
+		.active.selected a.buffer:hover,
+		ul.buffers .active.selected a.buffer, 
+		ul.buffers .active.selected a.buffer:hover {
+			background-color: rgba(62,119,119,1);
+			color: #fff;
+			border-left-color: rgba(62,119,119,1);
+			font-weight: normal;
+		}
+		.selected.unread span.label {
+			padding-left: 7px;
+		}
+		h2.selected a.buffer {
+			border-bottom: 1px solid #333 !important;
+		}
+
+		h2, ul a,
+		li a.buffer {
+			transition: 0.4s background-color, 0.4s color, 0.4s border-color;
+		}
+
+
+		// conversations
+		ul.conversations {
+			margin-top: 5px;
+		}
+		// archives
+		p.archiveToggle a {
+			margin-top: 5px;
+		}
+		p.archiveToggle a:hover, p.openArchiveToggle a, p.openArchiveToggle a:hover {
+			background-color: #444;
+			color: #aaa;
+		 
+		}
+		ul.archives {
+			background-color: #1a1a1a;
+		}
+		ul.archives.archives a:hover {
+			background-color: rgba(255,255,255,0.1);
+		}
+
+		// add channel
+		p.join a {
+			color: #eee;
+		}
+		p.join a:hover {
+			background-color: rgba(62,119,119,0.4);
+			color: #fff;
+		}
+
+	}
+
+	// add, reorder networks
+	div#buffersFooter {
+		
+		p {
+			background-color: #444;
+		}
+		
+		p a {
+			background-color: #444;
+			border-bottom: 1px solid #252525;
+			color: #fff;
+			transition: 0.3s background-color;
+		}
+		
+		p a:hover {
+			background-color: rgba(62,119,119,0.4);
+			border-bottom: 1px solid #252525;
+			color: #fff;
+		}
+		
+		p.selected a {
+			background-color: rgba(62,119,119,1);
+			border-bottom: 1px solid #252525;
+			font-weight: normal;
+		}
+		
+		p#addNetwork.selected a {
+			padding-left: 29px;
+			background-position: 9px 4px;
+		}
+	}
+
+	#buffers h2 span.drag, 
+	p#reorderNetworks span.icon {
+		background-position: 1px -68px;
+		opacity: 0.5;
+		transition: 0.3s opacity;
+	}
+	#buffers h2.active span.drag, 
+	p#reorderNetworks span.icon {
+		background-position: 1px -68px;
+		opacity: 0.8;
+	}
+	#buffers h2 a:hover span.drag {
+		background-position: 1px -68px;
+		opacity: 0.8;
+	} 
+	#buffers h2.active a:hover span.drag, 
+	#buffers h2.active.selected a:hover span.drag, 
+	p#reorderNetworks a:hover span.icon {
+		background-position: 1px -68px;
+		opacity: 1;
+	}
+
+
+	// notify badges
+	@keyframes color-pulse {
+		0% { border-left-color: @color-red; }
+		100% { border-left-color: #3e7777; }
+	}
+
+	#buffers ul.buffers .activeBadge.unread a.buffer {
+		border-left-color: @color-red;
+		animation: color-pulse 1s ease-in infinite alternate;
+	}
+
+	#buffers span.badge {
+		min-width: 11px;
+		height: 15px;
+		text-align: center;
+		padding: 0 3px 0 2px;
+		line-height: 13px;
+		background-color: @color-red;
+		border: none;
+		color: #fff;
+	}
+
+
+	// footer
+	#footer {
+		color: #aaa;
+	
+		p:first-child {
+			height: 25px;
+			overflow: hidden;
+			transition: 0.3s;
+			position: relative;
+		 
+			background: #151515;
+			padding: 5px 10px;
+			box-sizing: border-box;
+		
+			a {
+				border-bottom: 1px solid #333;
+				padding: 1px 2px;
+			}
+			&:before {
+				content: "IRCCloud Links";
+				display: block;
+				background: #333;
+				opacity: 1;
+				transition: 0.2s;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 180px;
+				height: 25px;
+				padding: 5px 10px;
+				box-sizing: border-box;
+			}
+			&:hover {
+				height: 220px;
+			}
+			&:hover a {
+				position: relative;
+				z-index: 2;
+			}
+			&:hover:before {
+				content: "Hover to view links";
+				display: block;
+				opacity: 1;
+				top: -25px;
+				z-index: 1;
+			}
+		}
+
+		br {
+			margin-bottom: 5px;
+		}
+	}
+
+	// sidebarindicator
+	.sidebarIndicator {
+		display: block !important;
+		height: 0;
+		transition: 0.5s height, 0.5s opacity;
+		border: none !important;
+		background: @color-teal;
+	}
+	.sidebarIndicator[style^="display: none"] {
+		display: block !important;
+		height: 0;
+		opacity: 0 !important;
+	}
+	.sidebarIndicatorUnread {
+		opacity: 1 !important;
+		height: 10px !important;
+		transition: 0.5s height, 0.5s opacity;
+	}
+}
+
+
+/* -------------------------------------- PAGES -------------------------------------------------- */
+
+.mainOverlayContent {
+	background: #333;
+	color: #eee;
+	font-size: 14pt;
+}
+
+/* add network page */
+.mainContainer {
+	background-color: #333;
+	color: #eee;
+}
+form.addNetworkForm {
+	background-color: #333;
+
+	h2 {
+		border-top-color: #666;
+		font-weight: bold;
+		color: #fff;
+	
+		a, span {
+			background-color: #333;
+			color: #ccc;
+		}
+		a:hover {
+			color: #fff;
+		}
+	}
+}
+
+
+/* settings */
+.accountContainer {
+	background-color: #333;
+	box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+	color: #eee;
+ 
+}
+
+#settingsDeleteAccount {
+	border: 2px solid @color-red;
+	margin-bottom: 20px;
+}
+#settingsDeleteAccount h2 {
+	background: @color-red;
+}
+
+
+/* billing */
+table.billing {
+	background-color: rgba(87,128,169,0.2);
+}
+table.billing th {
+	color: #fff;
+}
+.billingDetails h2 {
+	font-weight: bold;
+}
+
+
+/* shortcuts */
+table.shortcuts {
+	color: #eee;
+	margin-bottom: 40px;
+}
+table.shortcuts tr.heading th {
+	font-weight: bold;
+}
+table.shortcuts kbd {
+	color: #cc99cc;
+}
+table.shortcuts kbd span {
+	color: #999;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* context menu */
+.contextMenu {
+	background-color: rgba(21,27,27,0.95);
+	border: 1px solid #609696;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+	color: #ccc;
+}
+.contextMenu a {
+	color: #fff;
+}
+
+#channelContextMenu.active.mod ul.actions li a.topic,
+#memberContextMenu ul.actions li a, .bufferContextMenu ul.actions li a.delete,
+.bufferContextMenu ul.actions li a,
+.bufferContextMenu.active ul.actions li a {
+	color: #fff;
+}
+
+#channelContextMenu.active.mod ul.actions li a.topic,
+#memberContextMenu ul.actions li a, .bufferContextMenu ul.actions li a.delete,
+.bufferContextMenu ul.actions li a.ignores,
+.bufferContextMenu ul.actions li a.images,
+.bufferContextMenu ul.actions li a.joinpart,
+.bufferContextMenu ul.actions li a.joinpartcollapse,
+.bufferContextMenu ul.actions li a.unread, .bufferContextMenu.active ul.actions li a {
+	color: #fff;
+}
+
+#channelContextMenu ul.actions li a:hover,
+#memberContextMenu ul.actions li a:hover,
+.bufferContextMenu ul.actions li a:hover {
+	background-color: rgba(74,115,115,0.5) !important;
+	cursor: pointer;
+}
+
+#channelContextMenu ul.actions li a:active,
+#memberContextMenu ul.actions li a:active,
+.bufferContextMenu ul.actions li a:active {
+	background-color: rgba(74,115,115,1) !important;
+}
+
+/* replace check image */
+#channelContextMenu ul.actions li.notifyAll a,
+#channelContextMenu ul.actions li.showMembers a,
+.bufferContextMenu ul.actions li.collapseDisconnects a,
+.bufferContextMenu ul.actions li.collapseJoinPart a,
+.bufferContextMenu ul.actions li.inlineImages a,
+.bufferContextMenu ul.actions li.inlinePastes a,
+.bufferContextMenu ul.actions li.inlineTweets a,
+.bufferContextMenu ul.actions li.showJoinPart a,
+.bufferContextMenu ul.actions li.trackUnread a {
+	background-image: none;
+}
+
+#channelContextMenu.notifyAll ul.actions li.notifyAll a:before,
+#channelContextMenu.showMemberList ul.actions li.showMembers a:before,
+.bufferContextMenu.collapsingDisconnects ul.actions li.collapseDisconnects a:before,
+.bufferContextMenu.collapsingJoinPart ul.actions li.collapseJoinPart a:before,
+.bufferContextMenu.inlineImagesEnabled ul.actions li.inlineImages a:before,
+.bufferContextMenu.inlinePastesEnabled ul.actions li.inlinePastes a:before,
+.bufferContextMenu.inlineTweetsEnabled ul.actions li.inlineTweets a:before,
+.bufferContextMenu.showingJoinPart ul.actions li.showJoinPart a:before,
+.bufferContextMenu.trackingUnread ul.actions li.trackUnread a:before {
+	content: "✔";
+	display: block;
+	left: 7px;
+	position: absolute;
+	color: #a3ffff;
+	font-size: 0.8em;
+	line-height: 18px;
+}
+
+.bufferContextMenu {
+	margin-top: -1px;
+}
+
+
+#channelContextMenu .modeLine {
+	border-top: 1px solid #609696;
+}
+
+/* member context menu */
+#memberContextMenu {
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+	
+	div.userContext {
+		background-color: rgba(74,115,115,0.5);
+	}
+	ul.actions {
+		border-top: 1px solid #609696;
+	}
+	input.message {
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* nick colorize */
+div.log div.row span a.author,
+.nick-colors div.log div.row span a.author {
+	transition: 1s color, 0.2s border-color !important;
+}
+.nick-colors ul.memberList li a:hover {
+	transition: 0.2s color, 0.2s border-color !important;
+}
+
+// member list
+ul.memberList li a:hover,
+ul.memberList li.hover a {
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255,255,255,0.5) !important;
+	color: @color-teal;
+	/*[[nick_color]]*/
+}
+
+// inputbox nick color
+td.nickcell a.nick:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #aaa;
+	color: @color-teal;
+	/*[[nick_color]]*/
+}
+
+td.nickcell a.nick {
+	color: @color-teal;
+	/*[[nick_color]]*/
+}
+
+.nick-colors div.log div.row span a.c0,
+.nick-colors div.log div.row span a.c0:hover,
+.nick-colors div.log div.row span a.hover.c0,
+.nick-colors div.log div.row span a.hover.c0:hover,
+.nick-colors ul.memberList li a.c0:hover,
+.nick-colors ul.memberList li.hover a.c0 { color: #c54784 !important; }
+
+.nick-colors div.log div.row span a.c1,
+.nick-colors div.log div.row span a.c1:hover,
+.nick-colors div.log div.row span a.hover.c1,
+.nick-colors div.log div.row span a.hover.c1:hover,
+.nick-colors ul.memberList li a.c1:hover,
+.nick-colors ul.memberList li.hover a.c1 { color: @color-red !important; }
+
+.nick-colors div.log div.row span a.c2,
+.nick-colors div.log div.row span a.c2:hover,
+.nick-colors div.log div.row span a.hover.c2,
+.nick-colors div.log div.row span a.hover.c2:hover,
+.nick-colors ul.memberList li a.c2:hover,
+.nick-colors ul.memberList li.hover a.c2 { color: #d5c761 !important; }
+
+.nick-colors div.log div.row span a.c3,
+.nick-colors div.log div.row span a.c3:hover,
+.nick-colors div.log div.row span a.hover.c3,
+.nick-colors div.log div.row span a.hover.c3:hover,
+.nick-colors ul.memberList li a.c3:hover,
+.nick-colors ul.memberList li.hover a.c3 { color: @color-yellow !important; }
+
+.nick-colors div.log div.row span a.c4,
+.nick-colors div.log div.row span a.c4:hover,
+.nick-colors div.log div.row span a.hover.c4,
+.nick-colors div.log div.row span a.hover.c4:hover,
+.nick-colors ul.memberList li a.c4:hover,
+.nick-colors ul.memberList li.hover a.c4 { color: @color-brown !important; }  
+
+.nick-colors div.log div.row span a.c5,
+.nick-colors div.log div.row span a.c5:hover,
+.nick-colors div.log div.row span a.hover.c5,
+.nick-colors div.log div.row span a.hover.c5:hover,
+.nick-colors ul.memberList li a.c5:hover,
+.nick-colors ul.memberList li.hover a.c5 { color: #cc99cc !important; }
+
+.nick-colors div.log div.row span a.c6,
+.nick-colors div.log div.row span a.c6:hover,
+.nick-colors div.log div.row span a.hover.c6,
+.nick-colors div.log div.row span a.hover.c6:hover,
+.nick-colors ul.memberList li a.c6:hover,
+.nick-colors ul.memberList li.hover a.c6 { color: #6f5aad !important; }
+
+.nick-colors div.log div.row span a.c7,
+.nick-colors div.log div.row span a.c7:hover,
+.nick-colors div.log div.row span a.hover.c7,
+.nick-colors div.log div.row span a.hover.c7:hover,
+.nick-colors ul.memberList li a.c7:hover,
+.nick-colors ul.memberList li.hover a.c7 { color: @color-purple !important; }
+
+.nick-colors div.log div.row span a.c8,
+.nick-colors div.log div.row span a.c8:hover,
+.nick-colors div.log div.row span a.hover.c8,
+.nick-colors div.log div.row span a.hover.c8:hover,
+.nick-colors ul.memberList li a.c8:hover,
+.nick-colors ul.memberList li.hover a.c8 { color: @color-blue !important; }
+
+.nick-colors div.log div.row span a.c9,
+.nick-colors div.log div.row span a.c9:hover,
+.nick-colors div.log div.row span a.hover.c9,
+.nick-colors div.log div.row span a.hover.c9:hover,
+.nick-colors ul.memberList li a.c9:hover,
+.nick-colors ul.memberList li.hover a.c9 { color: #2d89b1 !important; }
+
+.nick-colors div.log div.row span a.c10,
+.nick-colors div.log div.row span a.c10:hover,
+.nick-colors div.log div.row span a.hover.c10,
+.nick-colors div.log div.row span a.hover.c10:hover,
+.nick-colors ul.memberList li a.c10:hover,
+.nick-colors ul.memberList li.hover a.c10 { color: #99cc99 !important; }
+
+.nick-colors div.log div.row span a.c11,
+.nick-colors div.log div.row span a.c11:hover,
+.nick-colors div.log div.row span a.hover.c11,
+.nick-colors div.log div.row span a.hover.c11:hover,
+.nick-colors ul.memberList li a.c11:hover,
+.nick-colors ul.memberList li.hover a.c11 { color: #82cbcb !important; }
+
+.nick-colors div.log div.row span a.c12,
+.nick-colors div.log div.row span a.c12:hover,
+.nick-colors div.log div.row span a.hover.c12,
+.nick-colors div.log div.row span a.hover.c12:hover,
+.nick-colors ul.memberList li a.c12:hover,
+.nick-colors ul.memberList li.hover a.c12 { color: @color-green !important; }
+
+.nick-colors div.log div.row span a.c13,
+.nick-colors div.log div.row span a.c13:hover,
+.nick-colors div.log div.row span a.hover.c13,
+.nick-colors div.log div.row span a.hover.c13:hover,
+.nick-colors ul.memberList li a.c13:hover,
+.nick-colors ul.memberList li.hover a.c13 { color: @color-teal !important; }
+
+
+
+
+/* ---------------------------------------------------------------------------------------- */
+
+
+/*[[sidebar_pos]]*/
+
+ 

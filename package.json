@@ -1,0 +1,30 @@
+{
+  "name": "aquamarine",
+  "id": "aquamarine",
+  "codename": "aquamarine",
+  "version": "1.0.0",
+  "description": "A dark-themed userstyle for IRCCloud",
+  "keywords": [
+    "userstyle",
+    "css",
+    "IRCCloud"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zvuc/Aquamarine"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Hansol Kim",
+    "url": "http://xenosium.com"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~2.2.0",
+    "grunt-banner": "^0.2.3",
+    "grunt-contrib-less": "~1.0.0",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "load-grunt-tasks": "^3.1.0"
+  }
+}
