@@ -1,5 +1,9 @@
 # Changelog
 
+#### :: 2015-02-21 ::
+- converted/refactored code to less, set up grunt build task for easier management
+- removed <code>#</code> from <code>url-prefix</code>
+
 #### :: 2015-02-03 ::
 - fixed white border appearing in message input box
 

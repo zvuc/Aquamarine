@@ -1,0 +1,1217 @@
+@-moz-document url-prefix("https://www.irccloud.com/") {
+  /* 
+ * IRCCloud Aquamarine Theme - 2015-02-21 
+ * by Hansol Kim (zvuc) (http://xenosium.com) 
+ * github repo: https://github.com/zvuc/Aquamarine 
+ * 
+ * created on 2014-08-26 
+ * last updated 2015-02-21 
+ * 
+ * Copyright 2015 Hansol Kim; MIT License 
+ */
+  /* base */
+  body.app {
+    background-color: #1f1f1f;
+  }
+  body.app #container {
+    color: #eee;
+  }
+  body.app ::-webkit-scrollbar-thumb,
+  body.app ::-webkit-scrollbar-track-piece {
+    border-radius: 0;
+  }
+  body.app ::-webkit-scrollbar {
+    width: 8px;
+  }
+  body.app ::-webkit-scrollbar:hover {
+    opacity: 1;
+  }
+  body.app ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border: 0;
+    border-radius: 10px;
+  }
+  body.app ::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    border: 0;
+  }
+  body.app ::-webkit-scrollbar-thumb:window-inactive {
+    background-color: #555;
+  }
+  body.app div.log div.chat,
+  body.app div.log div.error,
+  body.app div.log div.groupedLines,
+  body.app div.log div.me,
+  body.app div.log div.notice,
+  body.app div.log div.status,
+  body.app div.log div.table,
+  body.app div.log div.warning {
+    color: #fff;
+  }
+  body.app .explanation {
+    color: #ccc;
+  }
+  body.app hr {
+    border-color: #666;
+  }
+  body.app a {
+    color: #82cbcb;
+  }
+  body.app a:hover {
+    color: #a3ffff;
+  }
+  body.app #footer a,
+  body.app #headercell a,
+  body.app #sidebar #limits a,
+  body.app h1#title a {
+    color: #82cbcb;
+  }
+  body.app #footer a:hover,
+  body.app #headercell a:hover,
+  body.app #sidebar #limits a:hover,
+  body.app h1#title a:hover {
+    color: #a3ffff;
+  }
+  body.app span.mode_ADMIN {
+    color: #b777e0;
+  }
+  body.app span.mode_OP {
+    color: #ff3334;
+  }
+  /* ---------------------------------------------------------------------------------------- */
+  /* buttons, forms, autocomplete */
+  body.app button span {
+    background: #666;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #666;
+    color: #eee;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  body.app button:hover:not([disabled]) a,
+  body.app button:hover:not([disabled]) span {
+    background: #777;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #777;
+  }
+  body.app button:active a,
+  body.app button:active span {
+    left: 0;
+    top: 0;
+    background-color: #54ced6 !important;
+    border: 1px solid #54ced6 !important;
+    -webkit-transition: none;
+    transition: none;
+    color: #fff !important;
+  }
+  body.app button:focus a,
+  body.app button:focus span {
+    outline: none;
+  }
+  body.app button.action span {
+    background: #399494;
+    box-shadow: none;
+    border: 1px solid #3d9f9f;
+    color: #fff;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  body.app button.action:hover:not([disabled]) span {
+    background: #4ecccc;
+    box-shadow: none;
+    border: 1px solid #54ced6;
+  }
+  body.app button.delete span {
+    background: #ff3334;
+    box-shadow: none;
+    border: 1px solid #ff3334;
+    color: #fff;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  body.app button.delete:hover:not([disabled]) span {
+    background: #f2777a;
+    box-shadow: none;
+    border: 1px solid #f2777a;
+  }
+  body.app button.active a,
+  body.app button.active span,
+  body.app button.active:hover a,
+  body.app button.active:hover span {
+    background: #399494;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #54ced6;
+  }
+  body.app button.options.active span {
+    border-bottom: none;
+  }
+  body.app button.delete:active a,
+  body.app button.delete:active span {
+    background-color: #ff3334 !important;
+    border: 1px solid #ff3334 !important;
+    -webkit-transition: none;
+    transition: none;
+    color: #fff !important;
+  }
+  body.app button b.bullet {
+    color: #eee;
+  }
+  body.app .form .input {
+    background: #1f1f1f;
+    color: #eee;
+    border: 2px solid rgba(119, 119, 119, 0.5);
+    -webkit-transition: 0.2s border-color;
+    transition: 0.2s border-color;
+    padding: 5px 7px;
+  }
+  body.app .form .input:focus {
+    border: 2px solid #54ced6;
+    margin: 0;
+    padding: 5px 7px;
+  }
+  body.app .ui-autocomplete {
+    border-color: #54ced6;
+    background: #222;
+  }
+  body.app .ui-menu-item a {
+    border-top: 1px solid #333;
+  }
+  body.app a.ui-state-focus,
+  body.app a.ui-state-focus span.host,
+  body.app a.ui-state-hover,
+  body.app a.ui-state-hover span.host {
+    background-color: #4a7373;
+    color: #fff;
+  }
+  body.app .ui-menu-item a span.host {
+    color: #ccc;
+  }
+  /* ---------------------------------------------------------------------------------------- */
+  /* overlay container */
+  .editNetworkOverlay,
+  .overlaycontainer {
+    background-color: #444;
+    border-color: #666;
+  }
+  .overlayHead {
+    background-image: -webkit-linear-gradient(top, #777777, #aaaaaa);
+    background-image: linear-gradient(to bottom, #777777, #aaaaaa);
+    border-bottom: none;
+  }
+  .overlay_container_prompt .overlayHead {
+    background-image: -webkit-linear-gradient(top, #58acb1, #2e595c);
+    background-image: linear-gradient(to bottom, #58acb1, #2e595c);
+  }
+  .overlay_container_prompt .overlaycontents input.prompt {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* ---------------------------------------------------------------------------------------- */
+  /* header */
+  #statusActions {
+    color: #666;
+  }
+  #statusActions b,
+  #statusActions strong {
+    color: #fff;
+  }
+  body.app h1#title span.logotype {
+    color: #eee;
+  }
+  body.app h1#title span.logotype span.cloud {
+    color: #eee;
+  }
+  body.app .mainContainer,
+  body.app table.buffer {
+    border-radius: 0;
+    border-left: 1px solid #333;
+    border-top: 1px solid #444;
+    border-right: 1px solid #333;
+    border-bottom: 0;
+  }
+  body.app .bufferHead {
+    background-color: #333;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 1px solid #1f1f1f;
+    border-radius: 0;
+  }
+  body.app div.buffermain {
+    background-color: #333;
+  }
+  body.app td.statuscell div.status h2.bufferHeading span.label {
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 300;
+    line-height: 1em;
+    padding-right: 10px;
+  }
+  body.app td.statuscell div.status h2.bufferHeading span.topic {
+    color: #bbb;
+  }
+  body.app td.statuscell div.status .identity {
+    margin: 10px 0 0 0;
+  }
+  /* ------------------------------ message part -------------------------------------------- */
+  div.scroll {
+    background-color: #1f1f1f;
+  }
+  /* links */
+  div#searchResults div.searchResultDate a {
+    color: #82cbcb;
+  }
+  div.log div.chat a,
+  div.log div.error a,
+  div.log div.groupedLines a,
+  div.log div.me a,
+  div.log div.notice a,
+  div.log div.status a,
+  div.log div.table a,
+  div.log div.warning a {
+    color: #82cbcb;
+  }
+  /* message log bg */
+  div.log {
+    background: #1f1f1f;
+  }
+  /* date wrapper */
+  div.dateWrapper table,
+  div.log div.dateChange p {
+    background-image: -webkit-linear-gradient(top, #333333, #2f2f2f);
+    background-image: linear-gradient(to bottom, #333333, #2f2f2f);
+    color: #eee;
+    box-shadow: none;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #222;
+  }
+  /* nick colors (Default) */
+  div.log span a.user,
+  div.log span a.server {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  div.log div.row span a.server.hover,
+  div.log div.row span a.server.hover:hover,
+  div.log div.row span a.server:hover,
+  div.log div.row span a.user.hover,
+  div.log div.row span a.user.hover:hover,
+  div.log div.row span a.user:hover {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  div.log div.row span a.author {
+    color: #b777e0;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+  }
+  div.log div.self {
+    background: #2a2a2a;
+  }
+  div.log div.row.self span a.author {
+    color: #54ced6;
+    /*[[nick_color]]*/
+  }
+  div.log div.row span a.author.hover,
+  div.log div.row span a.author.hover:hover,
+  div.log div.row span a.author:hover {
+    color: #b777e0;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  }
+  div.log div.row.self span a.author:hover,
+  div.log div.row.self span a.author.hover,
+  div.log div.row.self span a.author.hover:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #aaa;
+    color: #54ced6;
+    /*[[nick_color]]*/
+  }
+  div.log div.row.highlight {
+    background-color: #313b3b;
+  }
+  div.log div.highlight span.date,
+  div.log div.searchMatch span.date {
+    color: #82cbcb;
+  }
+  div.log div.groupedLines {
+    background-color: #313b3b;
+    border-color: #82cbcb;
+  }
+  div.log div.notice {
+    background-color: #39352c;
+  }
+  div.log div.warning {
+    background-color: #5f3232;
+  }
+  div.log div.bottomSeen hr,
+  div.log div.focusSeen hr,
+  div.log div.lastSeen hr {
+    border-top: 1px solid #666;
+  }
+  div.log div.bottomSeen span,
+  div.log div.focusSeen span,
+  div.log div.lastSeen span.text {
+    background-color: #1f1f1f;
+    color: #ffcc66;
+  }
+  div.log div.backlogDivider hr,
+  div.log div.fetch hr {
+    border-color: #82cbcb;
+  }
+  div.log div.part hr {
+    border-top: 4px double #333;
+  }
+  div.log div.fetch span {
+    background-color: #1f1f1f;
+    color: #eee;
+  }
+  div.log div.hover span.date {
+    color: #eee;
+  }
+  div.log div span.date {
+    -webkit-transition: 0.2s color;
+    transition: 0.2s color;
+  }
+  div.log div.messageRow {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  div.log div.messageRow.status {
+    background-color: #333;
+    opacity: 1;
+  }
+  div.log div.messageRow.status:hover {
+    opacity: 1;
+  }
+  div.log div.groupedDisco,
+  div.log div.groupedJoinPart {
+    border-bottom: 1px solid #1f1f1f;
+    border-top: 1px solid #1f1f1f;
+    background-color: #1f1f1f;
+    opacity: 0.5;
+  }
+  div.log div.groupedDisco:hover,
+  div.log div.groupedJoinPart:hover {
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+    background-color: #121212;
+    opacity: 1;
+  }
+  div.log div.groupedDisco.expanded,
+  div.log div.groupedJoinPart.expanded {
+    border-bottom: 1px solid #1f1f1f;
+    border-top: 1px solid #444;
+    background-color: #121212;
+    opacity: 1;
+  }
+  div.log div.joinPartGroup.expanded {
+    border-bottom: 1px solid #444;
+    background-color: #1f1f1f;
+    opacity: 1;
+  }
+  div.log div.joinPartGroup div.messageRow,
+  div.log div.joinPartGroup.expanded div.messageRow {
+    background-color: #161616;
+  }
+  div.log div.groupedJoinPart span.mode,
+  div.log span.prefix {
+    color: #ddd;
+  }
+  /* extras bar */
+  .extras span.extrasBar {
+    background-color: #3f6262;
+  }
+  .extras span.extrasBar:hover {
+    background-color: #2e4747;
+  }
+  .extras span.extrasDismiss {
+    background-color: #3e989e;
+  }
+  .extras span.extrasDismiss:hover {
+    background-color: #31777c;
+  }
+  /* msg input box */
+  td.bufferinputcell {
+    border-top: 1px solid #222;
+    -webkit-transition: 0.3s background-color;
+    transition: 0.3s background-color;
+  }
+  td.bufferinputcell div.nickinputwrapper {
+    border: none !important;
+    border-radius: 2px;
+    background-color: #1f1f1f;
+    padding: 2px 0 2px 0;
+    margin: 8px 10px 8px 0;
+  }
+  td.bufferinputcell td.nickcell {
+    background: #1f1f1f;
+    border: none !important;
+    border-radius: 2px 0 0 2px;
+  }
+  td.bufferinputcell td.inputcell {
+    background: #1f1f1f;
+    border-radius: 0 2px 2px 0;
+    border: none !important;
+    box-shadow: none;
+  }
+  td.bufferinputcell td.inputcell textarea {
+    background: #1f1f1f;
+    color: #eee;
+  }
+  .away td.bufferinputcell {
+    background: #666;
+  }
+  /* input info (autocomplete) */
+  .inputInfo {
+    border: 2px solid #3d9f9f;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    background-image: -webkit-linear-gradient(top, #444444, #333333);
+    background-image: linear-gradient(to bottom, #444444, #333333);
+  }
+  .inputInfo span.item a {
+    color: #eee;
+  }
+  .inputInfo span.original {
+    color: #82cbcb;
+  }
+  .inputInfo span.highlight,
+  .inputInfo span.item:hover {
+    background-color: #3d9f9f;
+  }
+  /* connection message */
+  .connectionStatus {
+    background-image: none;
+    background-color: #637171;
+    border-color: #637171;
+    color: #eee;
+    border-width: 0;
+  }
+  .connectionStatus a {
+    -webkit-transition: 0.3s background-color;
+    transition: 0.3s background-color;
+    border-color: #ccc;
+  }
+  .connectionStatus a:hover {
+    background-color: #587b7b;
+    border-color: #609696;
+    color: #fff;
+  }
+  .connectionStatus a span {
+    float: right;
+  }
+  .connectionStatus.disconnect a,
+  .connectionStatus.edit a,
+  .connectionStatus.reconnect a,
+  .connectionStatus.upgrade a {
+    background-color: #637171;
+    border-color: #637171;
+    color: #eee;
+  }
+  .connectionStatus.disconnect a:hover,
+  .connectionStatus.edit a:hover,
+  .connectionStatus.reconnect a:hover,
+  .connectionStatus.upgrade a:hover {
+    background-color: #587b7b;
+    border-color: #609696;
+    color: #fff;
+  }
+  .connectionStatus.disconnect span[class],
+  .connectionStatus.edit span[class],
+  .connectionStatus.reconnect span[class],
+  .connectionStatus.upgrade span[class] {
+    color: #a0cbcb;
+  }
+  .connectionStatus.disconnect a:hover span[class],
+  .connectionStatus.edit a:hover span[class],
+  .connectionStatus.reconnect a:hover span[class],
+  .connectionStatus.upgrade a:hover span[class] {
+    color: #82cbcb;
+  }
+  .connectionStatus.away a {
+    background-color: #666;
+    border-color: #777;
+    color: #eee;
+  }
+  .connectionStatus.away a:hover {
+    background-color: #777;
+    color: #fff;
+  }
+  .connectionStatus.away span.back {
+    color: #aaa;
+  }
+  .connectionStatus.away a:hover span.back {
+    color: #ccc;
+  }
+  .connectionStatus.fail {
+    background-image: none;
+    background-color: #f8df26;
+    border-color: #ffcc66;
+    color: #632800;
+  }
+  .connectionStatus.fail a,
+  .connectionStatus.fail a:hover {
+    background: none;
+    border-color: #dbb300;
+    color: #632800;
+  }
+  .connectionStatus.fail span[class] {
+    color: #dbb300;
+  }
+  .connectionStatus.fail a span[class] {
+    color: #632800 !important;
+  }
+  /* channel list */
+  .overlay table thead td,
+  .overlay table thead th {
+    background: #333;
+  }
+  .overlay table td,
+  .overlay table th {
+    border-left-color: #222;
+  }
+  .overlayTable tr.even td {
+    background: #393939;
+  }
+  /* ------------------------------ member list -------------------------------------------- */
+  div.memberwrapper {
+    background-color: #222;
+    color: #eee;
+    border-color: #1f1f1f;
+  }
+  div.memberwrapper ul.memberList a {
+    color: #ddd;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+  }
+  div.memberwrapper ul.memberList.memberList li ul {
+    border-bottom: 1px solid #1f1f1f;
+    font-size: 0.9em;
+  }
+  div.memberwrapper ul.memberList li.owner h2,
+  div.memberwrapper ul.memberList li.owner ul {
+    background: rgba(231, 170, 0, 0.1);
+  }
+  div.memberwrapper ul.memberList li.admin h2,
+  div.memberwrapper ul.memberList li.admin ul {
+    background: rgba(101, 0, 165, 0.1);
+  }
+  div.memberwrapper ul.memberList li.admin h2 {
+    color: #b777e0;
+  }
+  div.memberwrapper ul.memberList li.ops h2,
+  div.memberwrapper ul.memberList li.ops ul {
+    background: rgba(186, 23, 25, 0.1);
+  }
+  div.memberwrapper ul.memberList li.ops h2 {
+    color: #ff3334;
+  }
+  div.memberwrapper ul.memberList li.halfops h2,
+  div.memberwrapper ul.memberList li.halfops ul {
+    background: rgba(181, 89, 0, 0.1);
+  }
+  div.memberwrapper ul.memberList li.voiced h2,
+  div.memberwrapper ul.memberList li.voiced ul {
+    background: rgba(37, 177, 0, 0.1);
+  }
+  div.memberwrapper ul.memberList li.user a.away {
+    color: #888;
+  }
+  /* ------------------------------ sidebar -------------------------------------------- */
+  #sidebar #limits a,
+  #sidebar #limits a:hover {
+    background: #333;
+    color: #eee !important;
+  }
+  #sidebar #limits a span.highlight {
+    color: #82cbcb !important;
+  }
+  #sidebar #limits h2,
+  #sidebar #limits h2:hover {
+    background: #6699cc !important;
+    border-radius: 0 !important;
+    color: #fff;
+  }
+  #sidebar #limits h2.limitedTrial {
+    background: #ff3334 !important;
+  }
+  #sidebar #limits span.trialRemain {
+    background-color: #333;
+  }
+  #sidebar #limits .price .badge {
+    background: #ff3334;
+  }
+  #sidebar #buffers li.connection {
+    background: #333;
+  }
+  #sidebar #buffers .active a.buffer {
+    color: #eee;
+  }
+  #sidebar #buffers h2 a.buffer {
+    background-color: #444;
+    border-bottom: 1px solid #252525;
+  }
+  #sidebar #buffers h2.failed a.buffer:hover {
+    color: #915433;
+    background-color: #ffcc66;
+  }
+  #sidebar #buffers h2.failed.selected a.buffer,
+  #sidebar #buffers h2.failed.selected a.buffer:hover {
+    background-color: #ffcc66;
+    border-bottom: 1px solid #252525;
+  }
+  #sidebar #buffers a.buffer {
+    color: #777;
+  }
+  #sidebar #buffers a.buffer:hover {
+    background-color: rgba(62, 119, 119, 0.4);
+    color: #999;
+  }
+  #sidebar #buffers ul.buffers a.buffer {
+    border-left: 5px solid #1f1f1f;
+    margin-left: -5px;
+  }
+  #sidebar #buffers .active a.buffer:hover {
+    color: #fff;
+  }
+  #sidebar #buffers h2.unread,
+  #sidebar #buffers h2.active.unread,
+  #sidebar #buffers ul.buffers .unread a.buffer,
+  #sidebar #buffers ul.buffers .active.unread a.buffer {
+    border-left: 5px solid #3e7777;
+    font-weight: normal;
+  }
+  #sidebar #buffers .selected a.buffer,
+  #sidebar #buffers .selected a.buffer:hover,
+  #sidebar #buffers ul.buffers .selected a.buffer,
+  #sidebar #buffers ul.buffers .selected a.buffer:hover {
+    background-color: #566a6a;
+    color: #fff;
+    border-left-color: #566a6a;
+    font-weight: normal;
+  }
+  #sidebar #buffers .active.selected a.buffer,
+  #sidebar #buffers .active.selected a.buffer:hover,
+  #sidebar #buffers ul.buffers .active.selected a.buffer,
+  #sidebar #buffers ul.buffers .active.selected a.buffer:hover {
+    background-color: #3e7777;
+    color: #fff;
+    border-left-color: #3e7777;
+    font-weight: normal;
+  }
+  #sidebar #buffers .selected.unread span.label {
+    padding-left: 7px;
+  }
+  #sidebar #buffers h2.selected a.buffer {
+    border-bottom: 1px solid #333 !important;
+  }
+  #sidebar #buffers h2,
+  #sidebar #buffers ul a,
+  #sidebar #buffers li a.buffer {
+    -webkit-transition: 0.4s background-color, 0.4s color, 0.4s border-color;
+    transition: 0.4s background-color, 0.4s color, 0.4s border-color;
+  }
+  #sidebar #buffers ul.conversations {
+    margin-top: 5px;
+  }
+  #sidebar #buffers p.archiveToggle a {
+    margin-top: 5px;
+  }
+  #sidebar #buffers p.archiveToggle a:hover,
+  #sidebar #buffers p.openArchiveToggle a,
+  #sidebar #buffers p.openArchiveToggle a:hover {
+    background-color: #444;
+    color: #aaa;
+  }
+  #sidebar #buffers ul.archives {
+    background-color: #1a1a1a;
+  }
+  #sidebar #buffers ul.archives.archives a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  #sidebar #buffers p.join a {
+    color: #eee;
+  }
+  #sidebar #buffers p.join a:hover {
+    background-color: rgba(62, 119, 119, 0.4);
+    color: #fff;
+  }
+  #sidebar div#buffersFooter p {
+    background-color: #444;
+  }
+  #sidebar div#buffersFooter p a {
+    background-color: #444;
+    border-bottom: 1px solid #252525;
+    color: #fff;
+    -webkit-transition: 0.3s background-color;
+    transition: 0.3s background-color;
+  }
+  #sidebar div#buffersFooter p a:hover {
+    background-color: rgba(62, 119, 119, 0.4);
+    border-bottom: 1px solid #252525;
+    color: #fff;
+  }
+  #sidebar div#buffersFooter p.selected a {
+    background-color: #3e7777;
+    border-bottom: 1px solid #252525;
+    font-weight: normal;
+  }
+  #sidebar div#buffersFooter p#addNetwork.selected a {
+    padding-left: 29px;
+    background-position: 9px 4px;
+  }
+  #sidebar #buffers h2 span.drag,
+  #sidebar p#reorderNetworks span.icon {
+    background-position: 1px -68px;
+    opacity: 0.5;
+    -webkit-transition: 0.3s opacity;
+    transition: 0.3s opacity;
+  }
+  #sidebar #buffers h2.active span.drag,
+  #sidebar p#reorderNetworks span.icon {
+    background-position: 1px -68px;
+    opacity: 0.8;
+  }
+  #sidebar #buffers h2 a:hover span.drag {
+    background-position: 1px -68px;
+    opacity: 0.8;
+  }
+  #sidebar #buffers h2.active a:hover span.drag,
+  #sidebar #buffers h2.active.selected a:hover span.drag,
+  #sidebar p#reorderNetworks a:hover span.icon {
+    background-position: 1px -68px;
+    opacity: 1;
+  }
+  @-webkit-keyframes color-pulse {
+    0% {
+      border-left-color: #ff3334;
+    }
+    100% {
+      border-left-color: #3e7777;
+    }
+  }
+  @keyframes color-pulse {
+    0% {
+      border-left-color: #ff3334;
+    }
+    100% {
+      border-left-color: #3e7777;
+    }
+  }
+  #sidebar #buffers ul.buffers .activeBadge.unread a.buffer {
+    border-left-color: #ff3334;
+    -webkit-animation: color-pulse 1s ease-in infinite alternate;
+    animation: color-pulse 1s ease-in infinite alternate;
+  }
+  #sidebar #buffers span.badge {
+    min-width: 11px;
+    height: 15px;
+    text-align: center;
+    padding: 0 3px 0 2px;
+    line-height: 13px;
+    background-color: #ff3334;
+    border: none;
+    color: #fff;
+  }
+  #sidebar #footer {
+    color: #aaa;
+  }
+  #sidebar #footer p:first-child {
+    height: 25px;
+    overflow: hidden;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    position: relative;
+    background: #151515;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+  #sidebar #footer p:first-child a {
+    border-bottom: 1px solid #333;
+    padding: 1px 2px;
+  }
+  #sidebar #footer p:first-child:before {
+    content: "IRCCloud Links";
+    display: block;
+    background: #333;
+    opacity: 1;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 25px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+  #sidebar #footer p:first-child:hover {
+    height: 220px;
+  }
+  #sidebar #footer p:first-child:hover a {
+    position: relative;
+    z-index: 2;
+  }
+  #sidebar #footer p:first-child:hover:before {
+    content: "Hover to view links";
+    display: block;
+    opacity: 1;
+    top: -25px;
+    z-index: 1;
+  }
+  #sidebar #footer br {
+    margin-bottom: 5px;
+  }
+  #sidebar .sidebarIndicator {
+    display: block !important;
+    height: 0;
+    -webkit-transition: 0.5s height, 0.5s opacity;
+    transition: 0.5s height, 0.5s opacity;
+    border: none !important;
+    background: #54ced6;
+  }
+  #sidebar .sidebarIndicator[style^="display: none"] {
+    display: block !important;
+    height: 0;
+    opacity: 0 !important;
+  }
+  #sidebar .sidebarIndicatorUnread {
+    opacity: 1 !important;
+    height: 10px !important;
+    -webkit-transition: 0.5s height, 0.5s opacity;
+    transition: 0.5s height, 0.5s opacity;
+  }
+  /* -------------------------------------- PAGES -------------------------------------------------- */
+  .mainOverlayContent {
+    background: #333;
+    color: #eee;
+    font-size: 14pt;
+  }
+  /* add network page */
+  .mainContainer {
+    background-color: #333;
+    color: #eee;
+  }
+  form.addNetworkForm {
+    background-color: #333;
+  }
+  form.addNetworkForm h2 {
+    border-top-color: #666;
+    font-weight: bold;
+    color: #fff;
+  }
+  form.addNetworkForm h2 a,
+  form.addNetworkForm h2 span {
+    background-color: #333;
+    color: #ccc;
+  }
+  form.addNetworkForm h2 a:hover {
+    color: #fff;
+  }
+  /* settings */
+  .accountContainer {
+    background-color: #333;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    color: #eee;
+  }
+  #settingsDeleteAccount {
+    border: 2px solid #ff3334;
+    margin-bottom: 20px;
+  }
+  #settingsDeleteAccount h2 {
+    background: #ff3334;
+  }
+  /* billing */
+  table.billing {
+    background-color: rgba(87, 128, 169, 0.2);
+  }
+  table.billing th {
+    color: #fff;
+  }
+  .billingDetails h2 {
+    font-weight: bold;
+  }
+  /* shortcuts */
+  table.shortcuts {
+    color: #eee;
+    margin-bottom: 40px;
+  }
+  table.shortcuts tr.heading th {
+    font-weight: bold;
+  }
+  table.shortcuts kbd {
+    color: #cc99cc;
+  }
+  table.shortcuts kbd span {
+    color: #999;
+  }
+  /* ---------------------------------------------------------------------------------------- */
+  /* context menu */
+  .contextMenu {
+    background-color: rgba(21, 27, 27, 0.95);
+    border: 1px solid #609696;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    color: #ccc;
+  }
+  .contextMenu a {
+    color: #fff;
+  }
+  #channelContextMenu.active.mod ul.actions li a.topic,
+  #memberContextMenu ul.actions li a,
+  .bufferContextMenu ul.actions li a.delete,
+  .bufferContextMenu ul.actions li a,
+  .bufferContextMenu.active ul.actions li a {
+    color: #fff;
+  }
+  #channelContextMenu.active.mod ul.actions li a.topic,
+  #memberContextMenu ul.actions li a,
+  .bufferContextMenu ul.actions li a.delete,
+  .bufferContextMenu ul.actions li a.ignores,
+  .bufferContextMenu ul.actions li a.images,
+  .bufferContextMenu ul.actions li a.joinpart,
+  .bufferContextMenu ul.actions li a.joinpartcollapse,
+  .bufferContextMenu ul.actions li a.unread,
+  .bufferContextMenu.active ul.actions li a {
+    color: #fff;
+  }
+  #channelContextMenu ul.actions li a:hover,
+  #memberContextMenu ul.actions li a:hover,
+  .bufferContextMenu ul.actions li a:hover {
+    background-color: rgba(74, 115, 115, 0.5) !important;
+    cursor: pointer;
+  }
+  #channelContextMenu ul.actions li a:active,
+  #memberContextMenu ul.actions li a:active,
+  .bufferContextMenu ul.actions li a:active {
+    background-color: #4a7373 !important;
+  }
+  /* replace check image */
+  #channelContextMenu ul.actions li.notifyAll a,
+  #channelContextMenu ul.actions li.showMembers a,
+  .bufferContextMenu ul.actions li.collapseDisconnects a,
+  .bufferContextMenu ul.actions li.collapseJoinPart a,
+  .bufferContextMenu ul.actions li.inlineImages a,
+  .bufferContextMenu ul.actions li.inlinePastes a,
+  .bufferContextMenu ul.actions li.inlineTweets a,
+  .bufferContextMenu ul.actions li.showJoinPart a,
+  .bufferContextMenu ul.actions li.trackUnread a {
+    background-image: none;
+  }
+  #channelContextMenu.notifyAll ul.actions li.notifyAll a:before,
+  #channelContextMenu.showMemberList ul.actions li.showMembers a:before,
+  .bufferContextMenu.collapsingDisconnects ul.actions li.collapseDisconnects a:before,
+  .bufferContextMenu.collapsingJoinPart ul.actions li.collapseJoinPart a:before,
+  .bufferContextMenu.inlineImagesEnabled ul.actions li.inlineImages a:before,
+  .bufferContextMenu.inlinePastesEnabled ul.actions li.inlinePastes a:before,
+  .bufferContextMenu.inlineTweetsEnabled ul.actions li.inlineTweets a:before,
+  .bufferContextMenu.showingJoinPart ul.actions li.showJoinPart a:before,
+  .bufferContextMenu.trackingUnread ul.actions li.trackUnread a:before {
+    content: "✔";
+    display: block;
+    left: 7px;
+    position: absolute;
+    color: #a3ffff;
+    font-size: 0.8em;
+    line-height: 18px;
+  }
+  .bufferContextMenu {
+    margin-top: -1px;
+  }
+  #channelContextMenu .modeLine {
+    border-top: 1px solid #609696;
+  }
+  /* member context menu */
+  #memberContextMenu {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  #memberContextMenu div.userContext {
+    background-color: rgba(74, 115, 115, 0.5);
+  }
+  #memberContextMenu ul.actions {
+    border-top: 1px solid #609696;
+  }
+  #memberContextMenu input.message {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* ---------------------------------------------------------------------------------------- */
+  /* nick colorize */
+  div.log div.row span a.author,
+  .nick-colors div.log div.row span a.author {
+    -webkit-transition: 1s color, 0.2s border-color !important;
+    transition: 1s color, 0.2s border-color !important;
+  }
+  .nick-colors ul.memberList li a:hover {
+    -webkit-transition: 0.2s color, 0.2s border-color !important;
+    transition: 0.2s color, 0.2s border-color !important;
+  }
+  ul.memberList li a:hover,
+  ul.memberList li.hover a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+    color: #54ced6;
+    /*[[nick_color]]*/
+  }
+  td.nickcell a.nick:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #aaa;
+    color: #54ced6;
+    /*[[nick_color]]*/
+  }
+  td.nickcell a.nick {
+    color: #54ced6;
+    /*[[nick_color]]*/
+  }
+  .nick-colors div.log div.row span a.c0,
+  .nick-colors div.log div.row span a.c0:hover,
+  .nick-colors div.log div.row span a.hover.c0,
+  .nick-colors div.log div.row span a.hover.c0:hover,
+  .nick-colors ul.memberList li a.c0:hover,
+  .nick-colors ul.memberList li.hover a.c0 {
+    color: #c54784 !important;
+  }
+  .nick-colors div.log div.row span a.c1,
+  .nick-colors div.log div.row span a.c1:hover,
+  .nick-colors div.log div.row span a.hover.c1,
+  .nick-colors div.log div.row span a.hover.c1:hover,
+  .nick-colors ul.memberList li a.c1:hover,
+  .nick-colors ul.memberList li.hover a.c1 {
+    color: #ff3334 !important;
+  }
+  .nick-colors div.log div.row span a.c2,
+  .nick-colors div.log div.row span a.c2:hover,
+  .nick-colors div.log div.row span a.hover.c2,
+  .nick-colors div.log div.row span a.hover.c2:hover,
+  .nick-colors ul.memberList li a.c2:hover,
+  .nick-colors ul.memberList li.hover a.c2 {
+    color: #d5c761 !important;
+  }
+  .nick-colors div.log div.row span a.c3,
+  .nick-colors div.log div.row span a.c3:hover,
+  .nick-colors div.log div.row span a.hover.c3,
+  .nick-colors div.log div.row span a.hover.c3:hover,
+  .nick-colors ul.memberList li a.c3:hover,
+  .nick-colors ul.memberList li.hover a.c3 {
+    color: #ffcc66 !important;
+  }
+  .nick-colors div.log div.row span a.c4,
+  .nick-colors div.log div.row span a.c4:hover,
+  .nick-colors div.log div.row span a.hover.c4,
+  .nick-colors div.log div.row span a.hover.c4:hover,
+  .nick-colors ul.memberList li a.c4:hover,
+  .nick-colors ul.memberList li.hover a.c4 {
+    color: #b09276 !important;
+  }
+  .nick-colors div.log div.row span a.c5,
+  .nick-colors div.log div.row span a.c5:hover,
+  .nick-colors div.log div.row span a.hover.c5,
+  .nick-colors div.log div.row span a.hover.c5:hover,
+  .nick-colors ul.memberList li a.c5:hover,
+  .nick-colors ul.memberList li.hover a.c5 {
+    color: #cc99cc !important;
+  }
+  .nick-colors div.log div.row span a.c6,
+  .nick-colors div.log div.row span a.c6:hover,
+  .nick-colors div.log div.row span a.hover.c6,
+  .nick-colors div.log div.row span a.hover.c6:hover,
+  .nick-colors ul.memberList li a.c6:hover,
+  .nick-colors ul.memberList li.hover a.c6 {
+    color: #6f5aad !important;
+  }
+  .nick-colors div.log div.row span a.c7,
+  .nick-colors div.log div.row span a.c7:hover,
+  .nick-colors div.log div.row span a.hover.c7,
+  .nick-colors div.log div.row span a.hover.c7:hover,
+  .nick-colors ul.memberList li a.c7:hover,
+  .nick-colors ul.memberList li.hover a.c7 {
+    color: #b777e0 !important;
+  }
+  .nick-colors div.log div.row span a.c8,
+  .nick-colors div.log div.row span a.c8:hover,
+  .nick-colors div.log div.row span a.hover.c8,
+  .nick-colors div.log div.row span a.hover.c8:hover,
+  .nick-colors ul.memberList li a.c8:hover,
+  .nick-colors ul.memberList li.hover a.c8 {
+    color: #6699cc !important;
+  }
+  .nick-colors div.log div.row span a.c9,
+  .nick-colors div.log div.row span a.c9:hover,
+  .nick-colors div.log div.row span a.hover.c9,
+  .nick-colors div.log div.row span a.hover.c9:hover,
+  .nick-colors ul.memberList li a.c9:hover,
+  .nick-colors ul.memberList li.hover a.c9 {
+    color: #2d89b1 !important;
+  }
+  .nick-colors div.log div.row span a.c10,
+  .nick-colors div.log div.row span a.c10:hover,
+  .nick-colors div.log div.row span a.hover.c10,
+  .nick-colors div.log div.row span a.hover.c10:hover,
+  .nick-colors ul.memberList li a.c10:hover,
+  .nick-colors ul.memberList li.hover a.c10 {
+    color: #99cc99 !important;
+  }
+  .nick-colors div.log div.row span a.c11,
+  .nick-colors div.log div.row span a.c11:hover,
+  .nick-colors div.log div.row span a.hover.c11,
+  .nick-colors div.log div.row span a.hover.c11:hover,
+  .nick-colors ul.memberList li a.c11:hover,
+  .nick-colors ul.memberList li.hover a.c11 {
+    color: #82cbcb !important;
+  }
+  .nick-colors div.log div.row span a.c12,
+  .nick-colors div.log div.row span a.c12:hover,
+  .nick-colors div.log div.row span a.hover.c12,
+  .nick-colors div.log div.row span a.hover.c12:hover,
+  .nick-colors ul.memberList li a.c12:hover,
+  .nick-colors ul.memberList li.hover a.c12 {
+    color: #9ec400 !important;
+  }
+  .nick-colors div.log div.row span a.c13,
+  .nick-colors div.log div.row span a.c13:hover,
+  .nick-colors div.log div.row span a.hover.c13,
+  .nick-colors div.log div.row span a.hover.c13:hover,
+  .nick-colors ul.memberList li a.c13:hover,
+  .nick-colors ul.memberList li.hover a.c13 {
+    color: #54ced6 !important;
+  }
+  /* ---------------------------------------------------------------------------------------- */
+  /*[[sidebar_pos]]*/
+  /* move sidebar to left */
+  div#sidebarwrapper {
+    right: inherit;
+    left: 0;
+    bottom: 0;
+    top: inherit;
+    height: calc(100% - 37px);
+  }
+  div#sidebar {
+    box-sizing: border-box;
+  }
+  div#sidebar #buffers {
+    margin: 0 10px;
+  }
+  #mainwrapper {
+    padding-right: 0;
+    padding-left: 201px;
+  }
+  #timeContainer {
+    left: 201px !important;
+  }
+  h1#title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #1f1f1f;
+    display: block;
+    height: 27px;
+    padding: 10px 0 0 5px;
+    margin-top: 0;
+  }
+  #headercell {
+    padding-right: 10px;
+  }
+}
