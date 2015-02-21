@@ -120,7 +120,7 @@
   /* buttons, forms, autocomplete */
   body.app button {
     font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 1rem;
   }
   body.app button span {
@@ -132,7 +132,7 @@
     transition: 0.2s;
     padding: 0.3em 1em;
     font-size: 0.9rem;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
