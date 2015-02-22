@@ -1,11 +1,11 @@
 @-moz-document url-prefix("https://www.irccloud.com/") {
   /* 
- * IRCCloud Aquamarine Theme - 2015-02-21 
+ * IRCCloud Aquamarine Theme 
  * by Hansol Kim (zvuc) (http://xenosium.com) 
  * github repo: https://github.com/zvuc/Aquamarine 
  * 
  * created on 2014-08-26 
- * last updated 2015-02-21 
+ * last updated 2015-02-22 
  * 
  * Copyright 2015 Hansol Kim; MIT License 
  */
@@ -14,31 +14,31 @@
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
-    src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/lato/v11/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+    src: local('Lato Regular'), local('Lato-Regular'), url(//fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2'), url(//fonts.gstatic.com/s/lato/v11/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
   }
   @font-face {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
-    src: local('Lato Bold'), local('Lato-Bold'), url(http://fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/lato/v11/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+    src: local('Lato Bold'), local('Lato-Bold'), url(//fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2) format('woff2'), url(//fonts.gstatic.com/s/lato/v11/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
   }
   @font-face {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 900;
-    src: local('Lato Black'), local('Lato-Black'), url(http://fonts.gstatic.com/s/lato/v11/tI4j516nok_GrVf4dhunkg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/lato/v11/BVtM30trf7q_jfqYeHfjtA.woff) format('woff');
+    src: local('Lato Black'), local('Lato-Black'), url(//fonts.gstatic.com/s/lato/v11/tI4j516nok_GrVf4dhunkg.woff2) format('woff2'), url(//fonts.gstatic.com/s/lato/v11/BVtM30trf7q_jfqYeHfjtA.woff) format('woff');
   }
   @font-face {
     font-family: 'Lato';
     font-style: italic;
     font-weight: 400;
-    src: local('Lato Italic'), local('Lato-Italic'), url(http://fonts.gstatic.com/s/lato/v11/PLygLKRVCQnA5fhu3qk5fQ.woff2) format('woff2'), url(http://fonts.gstatic.com/s/lato/v11/oUan5VrEkpzIazlUe5ieaA.woff) format('woff');
+    src: local('Lato Italic'), local('Lato-Italic'), url(//fonts.gstatic.com/s/lato/v11/PLygLKRVCQnA5fhu3qk5fQ.woff2) format('woff2'), url(//fonts.gstatic.com/s/lato/v11/oUan5VrEkpzIazlUe5ieaA.woff) format('woff');
   }
   @font-face {
     font-family: 'Lato';
     font-style: italic;
     font-weight: 700;
-    src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(http://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYED8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+    src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(//fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(//fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYED8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
   }
   /* base */
   body.app {
@@ -328,6 +328,10 @@
     margin: 10px 0 0 0;
   }
   /* ------------------------------ message part -------------------------------------------- */
+  div.log div.messageRow,
+  div#timeContainer {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
+  }
   div.scroll {
     background-color: #1f1f1f;
   }
@@ -359,6 +363,7 @@
     border-top: 1px solid #444;
     border-bottom: 1px solid #222;
     font-style: italic;
+    font-size: 0.8em;
   }
   div.dateWrapper .clockcell {
     -webkit-filter: invert(100%);
@@ -369,6 +374,7 @@
   div.log span a.server {
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
   }
   div.log div.row span a.server.hover,
   div.log div.row span a.server.hover:hover,
@@ -382,29 +388,32 @@
     -webkit-transition: 0.2s;
     transition: 0.2s;
   }
-  div.log div.row span a.author {
+  div.log div.row span.authorWrap {
+    margin-right: 3px;
+  }
+  div.log div.row span.authorWrap a.author {
     color: #b777e0;
     -webkit-transition: 0.2s;
     transition: 0.2s;
     border-bottom: 1px solid rgba(0, 0, 0, 0);
   }
-  div.log div.self {
-    background: #2a2a2a;
-  }
-  div.log div.row.self span a.author {
-    color: #54ced6;
-    /*[[nick_color]]*/
-  }
-  div.log div.row span a.author.hover,
-  div.log div.row span a.author.hover:hover,
-  div.log div.row span a.author:hover {
+  div.log div.row span.authorWrap a.author.hover,
+  div.log div.row span.authorWrap a.author.hover:hover,
+  div.log div.row span.authorWrap a.author:hover {
     color: #b777e0;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
   }
-  div.log div.row.self span a.author:hover,
-  div.log div.row.self span a.author.hover,
-  div.log div.row.self span a.author.hover:hover {
+  div.log div.row.self {
+    background: #2a2a2a;
+  }
+  div.log div.row.self span.authorWrap a.author {
+    color: #54ced6;
+    /*[[nick_color]]*/
+  }
+  div.log div.row.self span.authorWrap a.author.hover,
+  div.log div.row.self span.authorWrap a.author.hover:hover,
+  div.log div.row.self span.authorWrap a.author:hover {
     text-decoration: none;
     border-bottom: 1px solid #aaa;
     color: #54ced6;
@@ -534,6 +543,10 @@
     background: #1f1f1f;
     border: none !important;
     border-radius: 2px 0 0 2px;
+  }
+  td.bufferinputcell td.nickcell a.nick {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
+    margin-right: 3px;
   }
   td.bufferinputcell td.inputcell {
     background: #1f1f1f;
@@ -1187,15 +1200,14 @@
     color: #54ced6;
     /*[[nick_color]]*/
   }
+  td.nickcell a.nick,
   td.nickcell a.nick:hover {
-    text-decoration: none;
-    border-bottom: 1px solid #aaa;
     color: #54ced6;
     /*[[nick_color]]*/
   }
-  td.nickcell a.nick {
-    color: #54ced6;
-    /*[[nick_color]]*/
+  td.nickcell a.nick:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #aaa;
   }
   .nick-colors div.log div.row span a.c0,
   .nick-colors div.log div.row span a.c0:hover,

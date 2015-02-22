@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     // Meta
     meta: {
       banner: '/* \n' +
-              ' * IRCCloud Aquamarine Theme - <%= grunt.template.today("yyyy-mm-dd") %> \n' +
+              ' * IRCCloud Aquamarine Theme \n' +
               ' * by Hansol Kim (zvuc) (http://xenosium.com) \n' +
               ' * github repo: https://github.com/zvuc/Aquamarine \n' +
               ' * \n' +

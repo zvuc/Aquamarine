@@ -31,6 +31,16 @@
 		sans-serif;
 }
 
+.font-set-helvetica() {
+	font-family:
+		"Helvetica Neue","Helvetica","Arial",
+		"HiraKakuProN-W3","Hiragino Sans GB W3",
+		"Apple SD Gothic Neo",
+		"NanumBarunGothic","NanumGothic",
+		"나눔고딕","Malgun Gothic",
+		sans-serif;
+}
+
 /* base */
 body.app {
 	background-color: #1f1f1f;
@@ -367,6 +377,12 @@ body.app {
 
 /* ------------------------------ message part -------------------------------------------- */
 
+// keep message text and timestamp font to helvetica
+div.log div.messageRow,
+div#timeContainer {
+	.font-set-helvetica;
+}
+
 div.scroll {
 	background-color: #1f1f1f;
 }
@@ -403,6 +419,7 @@ div.dateWrapper table {
 	border-top: 1px solid #444;
 	border-bottom: 1px solid #222; 
 	font-style: italic;
+	font-size: 0.8em;
 }
 
 div.dateWrapper .clockcell {
@@ -416,6 +433,7 @@ div.log {
 	span a.server {
 		text-decoration: none;
 		border-bottom: 1px solid rgba(255,255,255,0.2);
+		.font-set;
 	}
 
 	div.row span a.server.hover,
@@ -430,36 +448,46 @@ div.log {
 		transition: 0.2s;
 	}
 
-	div.row span a.author {
-		color: @color-purple;
-		transition: 0.2s;
-		border-bottom: 1px solid rgba(0,0,0,0);
-	}
+	// message row
+	div.row {
 
-	div.self {
-		background: #2a2a2a;
-	}
+		// author block
+		span.authorWrap {
+			margin-right: 3px;
+		
+			a.author {
+				color: @color-purple;
+				transition: 0.2s;
+				border-bottom: 1px solid rgba(0,0,0,0);
 
-	div.row.self span a.author {
-		color: @color-teal;
-		/*[[nick_color]]*/
-	}
+				&.hover,
+				&.hover:hover,
+				&:hover {
+					color: @color-purple;
+					text-decoration: none;
+					border-bottom: 1px solid rgba(255,255,255,0.5) !important;
+				}
+			}
+		}
 
-	div.row span a.author.hover,
-	div.row span a.author.hover:hover,
-	div.row span a.author:hover {
-		color: @color-purple;
-		text-decoration: none;
-		border-bottom: 1px solid rgba(255,255,255,0.5) !important;
-	}
+		// self row
+		&.self {
+			background: #2a2a2a;
 
-	div.row.self span a.author:hover,
-	div.row.self span a.author.hover,
-	div.row.self span a.author.hover:hover {
-		text-decoration: none;
-		border-bottom: 1px solid #aaa;
-		color: @color-teal;
-		/*[[nick_color]]*/
+			span.authorWrap a.author {
+				color: @color-teal;
+				/*[[nick_color]]*/
+
+				&.hover,
+				&.hover:hover,
+				&:hover {
+					text-decoration: none;
+					border-bottom: 1px solid #aaa;
+					color: @color-teal;
+					/*[[nick_color]]*/
+				}
+			}
+		}
 	}
 
 
@@ -614,6 +642,11 @@ td.bufferinputcell {
 		background: #1f1f1f;
 		border: none !important;
 		border-radius: 2px 0 0 2px;
+
+		a.nick {
+			.font-set;
+			margin-right: 3px;
+		}
 	}
 	td.inputcell {
 		background: #1f1f1f;
@@ -1374,17 +1407,18 @@ ul.memberList li.hover a {
 }
 
 // inputbox nick color
+td.nickcell a.nick,
 td.nickcell a.nick:hover {
-	text-decoration: none;
-	border-bottom: 1px solid #aaa;
 	color: @color-teal;
 	/*[[nick_color]]*/
 }
 
-td.nickcell a.nick {
-	color: @color-teal;
-	/*[[nick_color]]*/
+td.nickcell a.nick:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #aaa;
 }
+
+
 
 .nick-colors div.log div.row span a.c0,
 .nick-colors div.log div.row span a.c0:hover,

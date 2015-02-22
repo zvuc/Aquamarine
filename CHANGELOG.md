@@ -1,5 +1,9 @@
 # Changelog
 
+#### :: 2015-02-22 ::
+- fixed google fonts not loading properly (issue #2)
+- minor code edits regarding nick fonts
+
 #### :: 2015-02-21 ::
 - converted/refactored code to less, set up grunt build task for easier management
 - removed <code>#</code> from <code>url-prefix</code>
