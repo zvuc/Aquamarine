@@ -80,6 +80,13 @@ body.app {
 	a { color: @color-teal-light; }
 	a:hover { color: lighten(@color-teal-light, 5%); }
 
+
+	.overlaycontainer a.away,
+	div.log a,div.log a.away,
+	div.log div.row.pending a {
+		color: @primary-color-pale-2
+	}
+
 	#footer a, #headercell a, #sidebar #limits a, h1#title a {
 		color: @color-teal-light;
 	}
@@ -214,6 +221,7 @@ body.app {
 			border: 2px solid rgba(119,119,119,0.5);
 			transition: 0.2s border-color;
 			padding: 5px 7px;
+			margin: 0;
 		
 			&:focus {
 				border: 2px solid @color-teal;
@@ -307,6 +315,9 @@ body.app {
 
 body.app {
 	// page title
+	h1#title {
+		margin-top: 0;
+	}
 	h1#title span.logotype {
 		color: #eee;
 		font-weight: bold;
@@ -657,6 +668,24 @@ td.bufferinputcell {
 	td.inputcell textarea {
 		background: #1f1f1f;
 		color: #eee;
+	}
+	td.uploadcell {
+		background: transparent;
+		border-color: transparent;
+
+		.uploadArrow {
+
+		}
+
+		&:hover,
+		&.menuActive {
+
+			.uploadArrow {
+				background-position: 7px 7px;
+				opacity: 1;
+				filter: contrast(200%);
+			}
+		}
 	}
 	.away & {
 		background: #666;
@@ -1519,6 +1548,277 @@ td.nickcell a.nick:hover {
 .nick-colors ul.memberList li.hover a.c13 { color: @color-teal !important; }
 
 
+/* ---------------------------------------------------------------------------------------- */
+
+
+/* pastebin embed */
+div.paste {
+	background: #444;
+	border-color: #555;
+
+	h1 {
+		background: #444;
+		color: #666;
+		border-bottom-color: #555;
+
+		span.info {
+			color: #eee;
+		}
+		span.modes {
+			color: #666;
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+
+		span.confirm {
+			box-shadow: none;
+			background-color: rgba(255,255,255,.1);
+		}
+
+		span.actions a {
+			color: @primary-color;
+
+			&:hover {
+				color: @primary-color;
+			}
+		}
+	}
+
+
+	.editForm input.nameInput,
+	.editForm input.nameInput:focus {
+		padding: 1px 3px;
+		margin-right: 3px;
+	}
+
+	.ace-chrome {
+		background-color: #222;
+		color: #fff;
+
+		.ace_gutter {
+			background-color: rgba(255,255,255,.1);
+			color: #eee;
+		}
+
+		.ace_gutter-active-line {
+			background-color: fadeout(@primary-color,50%);
+		}
+
+		.ace_selection {
+			background-color: fadeout(@primary-color,70%);
+		}
+
+		.ace_active-line {
+			background-color: rgba(0,0,0,.5);
+		}
+		.ace_cursor {
+			border-left-color: #fff;
+		}
+
+	}
+
+}
+
+// import syntax highlighting theme
+@import 'tomorrow-night-bright.less';
+
+
+/* uploaded file embed */
+// container
+#maincell .inlinefiles span.fileWrap {
+}
+
+div.log span.fileWrap .file,
+div.log span.fileWrap .fileProgress {
+	border: none;
+}
+
+// inner
+div.log div.pendingError span.fileWrap .fileProgress,
+div.log span.fileWrap .file {
+	background-color: #333;
+	border: none;
+}
+
+div.log span.fileWrap .fileProgress {
+	background-color: #444
+}
+
+div.log div.chat span.fileWrap a,
+div.log div.row.pending span.fileWrap a  {
+	color: #fff;
+
+	&:hover {
+		color: @primary-color;
+	}
+}
+
+div.log span.fileWrap .progress {
+	background: @primary-color-pale-2;
+}
+
+
+/* document icons */
+.documentIcon {
+	border-color: @primary-color-pale;
+	box-shadow: none;
+	background-color: #222;
+
+	.tag {
+		background-color: @primary-color-pale;
+	}
+
+	.label {
+		color: #fff;
+	}
+}
+
+/* files list */
+#filesList {
+	.file {
+		border-color: @primary-color-pale;
+
+		.info {
+			background-color: #555;
+			border-right-color: @primary-color-pale;
+
+			p {
+				color: #fff;
+			}
+		}
+
+		&:hover {
+			border-color: @primary-color;
+		}
+		&:hover .info {
+			background-color: #666;
+			border-right-color: @primary-color;
+		}
+
+		.link {
+			a {
+				color: #fff;
+				&:hover {
+					color: @primary-color;
+				}
+			}
+		}
+	}
+}
+
+/* file upload context menu */
+#uploadContextMenu {
+	background-color: rgba(21,27,27,0.95);
+	border: 1px solid #609696;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+	color: #ccc;
+	width: 250px;
+
+	ul#uploadProgressBars {
+		overflow: hidden;
+
+		li.fileProgress {
+
+			a.file {
+				overflow: hidden;
+				padding: 5px 10px;
+				border-bottom-color: #666;
+				background-color: rgba(255,255,255,0.05);
+			}
+			td.name {
+				color: #eee;
+				word-break: break-all;
+			}
+			a.file:hover {
+				color: #fff;
+				text-decoration: none;
+				background-color: fadeout(@primary-color-pale,50%);
+			}
+		}
+	}
+	ul.actions {
+		li a {
+			padding: 7px 10px;
+		}
+		li a:hover {
+			background-color: fadeout(@primary-color-pale,50%);
+		}
+	}
+
+	.progress .progressBar {
+		border-color: transparent;
+		background-color: @primary-color;
+	}
+	.finalising .progressBar {
+		border-color: transparent;
+		background-color: @primary-color-pale-2;
+	}
+}
+
+// animated stripes
+#uploadContextMenu .finalising .progressBar,
+div.log span.fileWrap .progress.busy,
+td.uploadcell.confirmed.busy {
+	background-image: linear-gradient(135deg, @primary-color-pale-2 25%, transparent 25%, transparent 50%, @primary-color-pale-2 50%, @primary-color-pale-2 75%, transparent 75%, transparent);
+}
+
+
+td.uploadcell {
+	border-color: transparent !important;
+
+	&.confirmed.active { 
+		border-color: transparent;
+		background-color: @primary-color;
+	}
+	&.confirmed.active { 
+		border-color: transparent;
+		background-color: @primary-color-pale-2;
+	}
+	&.confirmed.success { 
+		border-color: transparent;
+		background-color: darken(#65A200,20%);
+	}
+	&.confirmed.cancelled {
+		border-color: transparent;
+		background-color: @color-yellow;
+	}
+	&.confirmed.error {
+		border-color: transparent;
+		background-color: #600000;
+	}
+}
+
+.radialProgress .part {
+	border: 3px solid @primary-color;
+}
+
+/* file upload container */
+#fileUploadContainer {
+	.uploadConfirmExtra {
+		p, span {
+			color: #ccc;
+		}
+
+		kbd {
+			color: #fff;
+		}
+	}	
+}
+
+
+/* file upload announcement block */
+#filesAnnouncement {
+	background-color: #333;
+	color: #fff;
+
+	.uploadArrow {
+		filter: invert(100%);
+	}
+
+	p.explanation label {
+		color: #fff;
+	}
+}
 
 
 /* ---------------------------------------------------------------------------------------- */

@@ -1,5 +1,9 @@
 # Changelog
 
+#### :: 2015-02-25 ::
+- add styles for new file upload feature
+- add styles for pastebin embeds
+
 #### :: 2015-02-22 ::
 - fixed google fonts not loading properly (issue #2)
 - minor code edits regarding nick fonts

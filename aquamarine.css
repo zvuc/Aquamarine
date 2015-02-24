@@ -5,7 +5,7 @@
  * github repo: https://github.com/zvuc/Aquamarine 
  * 
  * created on 2014-08-26 
- * last updated 2015-02-22 
+ * last updated 2015-02-25 
  * 
  * Copyright 2015 Hansol Kim; MIT License 
  */
@@ -91,6 +91,12 @@
   }
   body.app a:hover {
     color: #94d2d2;
+  }
+  body.app .overlaycontainer a.away,
+  body.app div.log a,
+  body.app div.log a.away,
+  body.app div.log div.row.pending a {
+    color: #637171;
   }
   body.app #footer a,
   body.app #headercell a,
@@ -209,6 +215,7 @@
     -webkit-transition: 0.2s border-color;
     transition: 0.2s border-color;
     padding: 5px 7px;
+    margin: 0;
   }
   body.app .form .input:focus {
     border: 2px solid #54ced6;
@@ -275,6 +282,9 @@
     text-align: center;
     padding: 1px 4px;
     color: #fff;
+  }
+  body.app h1#title {
+    margin-top: 0;
   }
   body.app h1#title span.logotype {
     color: #eee;
@@ -557,6 +567,17 @@
   td.bufferinputcell td.inputcell textarea {
     background: #1f1f1f;
     color: #eee;
+  }
+  td.bufferinputcell td.uploadcell {
+    background: transparent;
+    border-color: transparent;
+  }
+  td.bufferinputcell td.uploadcell:hover .uploadArrow,
+  td.bufferinputcell td.uploadcell.menuActive .uploadArrow {
+    background-position: 7px 7px;
+    opacity: 1;
+    -webkit-filter: contrast(200%);
+    filter: contrast(200%);
   }
   .away td.bufferinputcell {
     background: #666;
@@ -1320,6 +1341,326 @@
   .nick-colors ul.memberList li a.c13:hover,
   .nick-colors ul.memberList li.hover a.c13 {
     color: #54ced6 !important;
+  }
+  /* ---------------------------------------------------------------------------------------- */
+  /* pastebin embed */
+  div.paste {
+    background: #444;
+    border-color: #555;
+  }
+  div.paste h1 {
+    background: #444;
+    color: #666;
+    border-bottom-color: #555;
+  }
+  div.paste h1 span.info {
+    color: #eee;
+  }
+  div.paste h1 span.modes {
+    color: #666;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  div.paste h1 span.confirm {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  div.paste h1 span.actions a {
+    color: #82cbcb;
+  }
+  div.paste h1 span.actions a:hover {
+    color: #82cbcb;
+  }
+  div.paste .editForm input.nameInput,
+  div.paste .editForm input.nameInput:focus {
+    padding: 1px 3px;
+    margin-right: 3px;
+  }
+  div.paste .ace-chrome {
+    background-color: #222;
+    color: #fff;
+  }
+  div.paste .ace-chrome .ace_gutter {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #eee;
+  }
+  div.paste .ace-chrome .ace_gutter-active-line {
+    background-color: rgba(130, 203, 203, 0.5);
+  }
+  div.paste .ace-chrome .ace_selection {
+    background-color: rgba(130, 203, 203, 0.3);
+  }
+  div.paste .ace-chrome .ace_active-line {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  div.paste .ace-chrome .ace_cursor {
+    border-left-color: #fff;
+  }
+  div.paste .ace-chrome {
+    background-color: #000000;
+    color: #DEDEDE;
+  }
+  div.paste .ace-chrome .ace_gutter {
+    background: #1a1a1a;
+    color: #dedede;
+  }
+  div.paste .ace-chrome .ace_print-margin {
+    width: 1px;
+    background: #1a1a1a;
+  }
+  div.paste .ace-chrome .ace_cursor {
+    color: #9f9f9f;
+  }
+  div.paste .ace-chrome .ace_marker-layer .ace_selection {
+    background: #424242;
+  }
+  div.paste .ace-chrome .ace-tomorrow-night-bright.ace_multiselect .ace_selection.ace_start {
+    box-shadow: 0 0 3px 0px #000000;
+    border-radius: 2px;
+  }
+  div.paste .ace-chrome .ace_marker-layer .ace_step {
+    background: #665200;
+  }
+  div.paste .ace-chrome .ace_marker-layer .ace_bracket {
+    margin: -1px 0 0 -1px;
+    border: 1px solid #888888;
+  }
+  div.paste .ace-chrome .ace_marker-layer .ace_highlight {
+    border: 1px solid #6e7700;
+    border-bottom: 0;
+    box-shadow: inset 0 -1px #6e7700;
+    margin: -1px 0 0 -1px;
+    background: rgba(255, 235, 0, 0.1);
+  }
+  div.paste .ace-chrome .ace_marker-layer .ace_active-line {
+    background: #2a2a2a;
+  }
+  div.paste .ace-chrome .ace_gutter-active-line {
+    background-color: #2a2a2a;
+  }
+  div.paste .ace-chrome .ace_stack {
+    background-color: #425a2c;
+  }
+  div.paste .ace-chrome .ace_marker-layer .ace_selected-word {
+    border: 1px solid #888888;
+  }
+  div.paste .ace-chrome .ace_invisible {
+    color: #343434;
+  }
+  div.paste .ace-chrome .ace_keyword,
+  div.paste .ace-chrome .ace_meta,
+  div.paste .ace-chrome .ace_storage,
+  div.paste .ace-chrome .ace_storage.ace_type,
+  div.paste .ace-chrome .ace_support.ace_type {
+    color: #c397d8;
+  }
+  div.paste .ace-chrome .ace_keyword.ace_operator {
+    color: #70c0b1;
+  }
+  div.paste .ace-chrome .ace_constant.ace_character,
+  div.paste .ace-chrome .ace_constant.ace_language,
+  div.paste .ace-chrome .ace_constant.ace_numeric,
+  div.paste .ace-chrome .ace_keyword.ace_other.ace_unit,
+  div.paste .ace-chrome .ace_support.ace_constant,
+  div.paste .ace-chrome .ace_variable.ace_parameter {
+    color: #e78c45;
+  }
+  div.paste .ace-chrome .ace_constant.ace_other {
+    color: #eeeeee;
+  }
+  div.paste .ace-chrome .ace_invalid {
+    color: #CED2CF;
+    background-color: #df5f5f;
+  }
+  div.paste .ace-chrome .ace_invalid.ace_deprecated {
+    color: #CED2CF;
+    background-color: #b798bf;
+  }
+  div.paste .ace-chrome .ace_fold {
+    background-color: #7AA6DA;
+    border-color: #dedede;
+  }
+  div.paste .ace-chrome .ace_entity.ace_name.ace_function,
+  div.paste .ace-chrome .ace_support.ace_function,
+  div.paste .ace-chrome .ace_variable {
+    color: #7aa6da;
+  }
+  div.paste .ace-chrome .ace_support.ace_class,
+  div.paste .ace-chrome .ace_support.ace_type {
+    color: #e7c547;
+  }
+  div.paste .ace-chrome .ace_heading,
+  div.paste .ace-chrome .ace_markup.ace_heading,
+  div.paste .ace-chrome .ace_string {
+    color: #b9ca4a;
+  }
+  div.paste .ace-chrome .ace_entity.ace_name.ace_tag,
+  div.paste .ace-chrome .ace_entity.ace_other.ace_attribute-name,
+  div.paste .ace-chrome .ace_meta.ace_tag,
+  div.paste .ace-chrome .ace_string.ace_regexp,
+  div.paste .ace-chrome .ace_variable {
+    color: #d54e53;
+  }
+  div.paste .ace-chrome .ace_comment {
+    color: #969896;
+  }
+  div.paste .ace-chrome .ace_c9searchresults.ace_keyword {
+    color: #c2c280;
+  }
+  div.paste .ace-chrome .ace_indent-guide {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNgYGBgYFBXV/8PAAJoAXX4kT2EAAAAAElFTkSuQmCC) right repeat-y;
+  }
+  /* uploaded file embed */
+  div.log span.fileWrap .file,
+  div.log span.fileWrap .fileProgress {
+    border: none;
+  }
+  div.log div.pendingError span.fileWrap .fileProgress,
+  div.log span.fileWrap .file {
+    background-color: #333;
+    border: none;
+  }
+  div.log span.fileWrap .fileProgress {
+    background-color: #444444;
+  }
+  div.log div.chat span.fileWrap a,
+  div.log div.row.pending span.fileWrap a {
+    color: #fff;
+  }
+  div.log div.chat span.fileWrap a:hover,
+  div.log div.row.pending span.fileWrap a:hover {
+    color: #82cbcb;
+  }
+  div.log span.fileWrap .progress {
+    background: #637171;
+  }
+  /* document icons */
+  .documentIcon {
+    border-color: #3e7777;
+    box-shadow: none;
+    background-color: #222;
+  }
+  .documentIcon .tag {
+    background-color: #3e7777;
+  }
+  .documentIcon .label {
+    color: #fff;
+  }
+  /* files list */
+  #filesList .file {
+    border-color: #3e7777;
+  }
+  #filesList .file .info {
+    background-color: #555;
+    border-right-color: #3e7777;
+  }
+  #filesList .file .info p {
+    color: #fff;
+  }
+  #filesList .file:hover {
+    border-color: #82cbcb;
+  }
+  #filesList .file:hover .info {
+    background-color: #666;
+    border-right-color: #82cbcb;
+  }
+  #filesList .file .link a {
+    color: #fff;
+  }
+  #filesList .file .link a:hover {
+    color: #82cbcb;
+  }
+  /* file upload context menu */
+  #uploadContextMenu {
+    background-color: rgba(21, 27, 27, 0.95);
+    border: 1px solid #609696;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    color: #ccc;
+    width: 250px;
+  }
+  #uploadContextMenu ul#uploadProgressBars {
+    overflow: hidden;
+  }
+  #uploadContextMenu ul#uploadProgressBars li.fileProgress a.file {
+    overflow: hidden;
+    padding: 5px 10px;
+    border-bottom-color: #666;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  #uploadContextMenu ul#uploadProgressBars li.fileProgress td.name {
+    color: #eee;
+    word-break: break-all;
+  }
+  #uploadContextMenu ul#uploadProgressBars li.fileProgress a.file:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(62, 119, 119, 0.5);
+  }
+  #uploadContextMenu ul.actions li a {
+    padding: 7px 10px;
+  }
+  #uploadContextMenu ul.actions li a:hover {
+    background-color: rgba(62, 119, 119, 0.5);
+  }
+  #uploadContextMenu .progress .progressBar {
+    border-color: transparent;
+    background-color: #82cbcb;
+  }
+  #uploadContextMenu .finalising .progressBar {
+    border-color: transparent;
+    background-color: #637171;
+  }
+  #uploadContextMenu .finalising .progressBar,
+  div.log span.fileWrap .progress.busy,
+  td.uploadcell.confirmed.busy {
+    background-image: -webkit-linear-gradient(315deg, #637171 25%, transparent 25%, transparent 50%, #637171 50%, #637171 75%, transparent 75%, transparent);
+    background-image: linear-gradient(135deg, #637171 25%, transparent 25%, transparent 50%, #637171 50%, #637171 75%, transparent 75%, transparent);
+  }
+  td.uploadcell {
+    border-color: transparent !important;
+  }
+  td.uploadcell.confirmed.active {
+    border-color: transparent;
+    background-color: #82cbcb;
+  }
+  td.uploadcell.confirmed.active {
+    border-color: transparent;
+    background-color: #637171;
+  }
+  td.uploadcell.confirmed.success {
+    border-color: transparent;
+    background-color: #253c00;
+  }
+  td.uploadcell.confirmed.cancelled {
+    border-color: transparent;
+    background-color: #ffcc66;
+  }
+  td.uploadcell.confirmed.error {
+    border-color: transparent;
+    background-color: #600000;
+  }
+  .radialProgress .part {
+    border: 3px solid #82cbcb;
+  }
+  /* file upload container */
+  #fileUploadContainer .uploadConfirmExtra p,
+  #fileUploadContainer .uploadConfirmExtra span {
+    color: #ccc;
+  }
+  #fileUploadContainer .uploadConfirmExtra kbd {
+    color: #fff;
+  }
+  /* file upload announcement block */
+  #filesAnnouncement {
+    background-color: #333;
+    color: #fff;
+  }
+  #filesAnnouncement .uploadArrow {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+  }
+  #filesAnnouncement p.explanation label {
+    color: #fff;
   }
   /* ---------------------------------------------------------------------------------------- */
   /*[[sidebar_pos]]*/
