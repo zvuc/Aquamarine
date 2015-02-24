@@ -24,7 +24,7 @@ This way is recommended because you can easily update the style whenever there i
 ### 2b. Custom installation
 Copy and paste the code from `aquamarine.css` as a new userstyle in your browser. 
 
-For browsers other than Firefox, remove the top `@-moz-document url-prefix("https://www.irccloud.com/#") {` line and the closing bracket `}` at the bottommost line of `aquamarine.css` when you're pasting the code into the extension. Make sure the code applies to site domains beginning with `https://www.irccloud.com/#`. 
+For browsers other than Firefox, remove the top `@-moz-document url-prefix("https://www.irccloud.com/") {` line and the closing bracket `}` at the bottommost line of `aquamarine.css` when you're pasting the code into the extension. Make sure the code applies to site domains beginning with `https://www.irccloud.com/`. 
 
 The `_colors.css` also in the repo is not a standalone stylesheet, it's for the self-nick color select option on userstyles.org. Copy a color hex code you like and replace it with where it says `/*[[nick_color]]*/` inside `aquamarine.css` and it that will be your alternative nick color.
 
