@@ -464,9 +464,11 @@ div.log {
 	div.row {
 
 		// author block
-		span.authorWrap {
-			margin-right: 3px;
-		
+		span {
+			&.authorWrap {
+				margin-right: 3px;
+			}
+			
 			a.author {
 				color: @color-purple;
 				transition: 0.2s;
@@ -486,7 +488,7 @@ div.log {
 		&.self {
 			background: #2a2a2a;
 
-			span.authorWrap a.author {
+			span a.author {
 				color: @color-teal;
 				/*[[nick_color]]*/
 
