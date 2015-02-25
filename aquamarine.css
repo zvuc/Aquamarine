@@ -402,15 +402,15 @@
   div.log div.row span.authorWrap {
     margin-right: 3px;
   }
-  div.log div.row span.authorWrap a.author {
+  div.log div.row span a.author {
     color: #b777e0;
     -webkit-transition: 0.2s;
     transition: 0.2s;
     border-bottom: 1px solid rgba(0, 0, 0, 0);
   }
-  div.log div.row span.authorWrap a.author.hover,
-  div.log div.row span.authorWrap a.author.hover:hover,
-  div.log div.row span.authorWrap a.author:hover {
+  div.log div.row span a.author.hover,
+  div.log div.row span a.author.hover:hover,
+  div.log div.row span a.author:hover {
     color: #b777e0;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
@@ -418,13 +418,13 @@
   div.log div.row.self {
     background: #2a2a2a;
   }
-  div.log div.row.self span.authorWrap a.author {
+  div.log div.row.self span a.author {
     color: #54ced6;
     /*[[nick_color]]*/
   }
-  div.log div.row.self span.authorWrap a.author.hover,
-  div.log div.row.self span.authorWrap a.author.hover:hover,
-  div.log div.row.self span.authorWrap a.author:hover {
+  div.log div.row.self span a.author.hover,
+  div.log div.row.self span a.author.hover:hover,
+  div.log div.row.self span a.author:hover {
     text-decoration: none;
     border-bottom: 1px solid #aaa;
     color: #54ced6;
