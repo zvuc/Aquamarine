@@ -399,6 +399,9 @@
     -webkit-transition: 0.2s;
     transition: 0.2s;
   }
+  div.log div.row.pending .content {
+    opacity: 0.5;
+  }
   div.log div.row span.authorWrap {
     margin-right: 3px;
   }
@@ -1126,6 +1129,7 @@
   body.app .bufferContextMenu ul.actions li a.joinpart,
   body.app .bufferContextMenu ul.actions li a.joinpartcollapse,
   body.app .bufferContextMenu ul.actions li a.notifyAll,
+  body.app .bufferContextMenu ul.actions li a.files,
   body.app .bufferContextMenu ul.actions li a.pastes,
   body.app .bufferContextMenu ul.actions li a.tweets,
   body.app .bufferContextMenu ul.actions li a.unread,
@@ -1141,6 +1145,7 @@
   body.app .bufferContextMenu ul.actions li a.joinpart:hover,
   body.app .bufferContextMenu ul.actions li a.joinpartcollapse:hover,
   body.app .bufferContextMenu ul.actions li a.notifyAll:hover,
+  body.app .bufferContextMenu ul.actions li a.files:hover,
   body.app .bufferContextMenu ul.actions li a.pastes:hover,
   body.app .bufferContextMenu ul.actions li a.tweets:hover,
   body.app .bufferContextMenu ul.actions li a.unread:hover,
@@ -1161,6 +1166,7 @@
   body.app .bufferContextMenu ul.actions li.collapseDisconnects a,
   body.app .bufferContextMenu ul.actions li.collapseJoinPart a,
   body.app .bufferContextMenu ul.actions li.inlineImages a,
+  body.app .bufferContextMenu ul.actions li.inlineFiles a,
   body.app .bufferContextMenu ul.actions li.inlinePastes a,
   body.app .bufferContextMenu ul.actions li.inlineTweets a,
   body.app .bufferContextMenu ul.actions li.showJoinPart a,
@@ -1172,6 +1178,7 @@
   body.app .bufferContextMenu.collapsingDisconnects ul.actions li.collapseDisconnects a:before,
   body.app .bufferContextMenu.collapsingJoinPart ul.actions li.collapseJoinPart a:before,
   body.app .bufferContextMenu.inlineImagesEnabled ul.actions li.inlineImages a:before,
+  body.app .bufferContextMenu.inlineFilesEnabled ul.actions li.inlineFiles a:before,
   body.app .bufferContextMenu.inlinePastesEnabled ul.actions li.inlinePastes a:before,
   body.app .bufferContextMenu.inlineTweetsEnabled ul.actions li.inlineTweets a:before,
   body.app .bufferContextMenu.showingJoinPart ul.actions li.showJoinPart a:before,
@@ -1353,6 +1360,9 @@
     background: #444;
     color: #666;
     border-bottom-color: #555;
+  }
+  div.paste h1 span.name {
+    color: #fff;
   }
   div.paste h1 span.info {
     color: #eee;

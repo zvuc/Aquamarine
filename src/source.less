@@ -463,6 +463,10 @@ div.log {
 	// message row
 	div.row {
 
+		&.pending .content {
+			opacity: 0.5;
+		}
+
 		// author block
 		span {
 			&.authorWrap {
@@ -1326,6 +1330,7 @@ body.app {
 	.bufferContextMenu ul.actions li a.joinpart, 
 	.bufferContextMenu ul.actions li a.joinpartcollapse, 
 	.bufferContextMenu ul.actions li a.notifyAll, 
+	.bufferContextMenu ul.actions li a.files, 
 	.bufferContextMenu ul.actions li a.pastes, 
 	.bufferContextMenu ul.actions li a.tweets, 
 	.bufferContextMenu ul.actions li a.unread, 
@@ -1342,6 +1347,7 @@ body.app {
 	.bufferContextMenu ul.actions li a.joinpart:hover, 
 	.bufferContextMenu ul.actions li a.joinpartcollapse:hover, 
 	.bufferContextMenu ul.actions li a.notifyAll:hover, 
+	.bufferContextMenu ul.actions li a.files:hover, 
 	.bufferContextMenu ul.actions li a.pastes:hover, 
 	.bufferContextMenu ul.actions li a.tweets:hover, 
 	.bufferContextMenu ul.actions li a.unread:hover, 
@@ -1366,6 +1372,7 @@ body.app {
 	.bufferContextMenu ul.actions li.collapseDisconnects a,
 	.bufferContextMenu ul.actions li.collapseJoinPart a,
 	.bufferContextMenu ul.actions li.inlineImages a,
+	.bufferContextMenu ul.actions li.inlineFiles a,
 	.bufferContextMenu ul.actions li.inlinePastes a,
 	.bufferContextMenu ul.actions li.inlineTweets a,
 	.bufferContextMenu ul.actions li.showJoinPart a,
@@ -1378,6 +1385,7 @@ body.app {
 	.bufferContextMenu.collapsingDisconnects ul.actions li.collapseDisconnects a:before,
 	.bufferContextMenu.collapsingJoinPart ul.actions li.collapseJoinPart a:before,
 	.bufferContextMenu.inlineImagesEnabled ul.actions li.inlineImages a:before,
+	.bufferContextMenu.inlineFilesEnabled ul.actions li.inlineFiles a:before,
 	.bufferContextMenu.inlinePastesEnabled ul.actions li.inlinePastes a:before,
 	.bufferContextMenu.inlineTweetsEnabled ul.actions li.inlineTweets a:before,
 	.bufferContextMenu.showingJoinPart ul.actions li.showJoinPart a:before,
@@ -1564,9 +1572,14 @@ div.paste {
 		color: #666;
 		border-bottom-color: #555;
 
+		span.name {
+			color: #fff;
+		}
+
 		span.info {
 			color: #eee;
 		}
+
 		span.modes {
 			color: #666;
 			padding-left: 4px;

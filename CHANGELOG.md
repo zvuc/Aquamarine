@@ -3,6 +3,8 @@
 #### :: 2015-02-25 ::
 - add styles for new file upload feature
 - add styles for pastebin embeds
+- fixed `/me` status messages nick color appearing black (issue #3)
+- minor style fixes
 
 #### :: 2015-02-22 ::
 - fixed google fonts not loading properly (issue #2)
