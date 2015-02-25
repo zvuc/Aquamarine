@@ -1663,6 +1663,14 @@
   #filesAnnouncement p.explanation label {
     color: #fff;
   }
+  /* file drop zone */
+  #dropTargetText {
+    background-color: #82cbcb;
+    color: #fff;
+  }
+  #dropTargetBorder {
+    border-color: #3e7777;
+  }
   /* ---------------------------------------------------------------------------------------- */
   /*[[sidebar_pos]]*/
   /* move sidebar to left */
