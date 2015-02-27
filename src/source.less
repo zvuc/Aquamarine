@@ -316,22 +316,37 @@ body.app {
 body.app {
 	// page title
 	h1#title {
-		margin-top: 0;
-	}
-	h1#title span.logotype {
-		color: #eee;
-		font-weight: bold;
-		padding-left: 2px;
+		display: block;
+		height: 32px;
+		margin: 0;
+		padding: 0 0 0 5px;
+		line-height: 34px;
 
-		span.cloud {
-			color: #eee;
-			font-weight: normal;
+		span.logo {
+			display: inline-block;
+			margin: 0;
+			height: 100%;
 		}
 
-		span.beta {
-			color: #aaa;
-			font-weight: normal;
-			font-style: italic;
+		span.logotype {
+			display: inline-block;
+			height: 100%;
+			margin: 0 5px 0 -3px;
+			padding: 0;
+			color: #eee;
+			line-height: 34px;
+			font-weight: bold;
+
+			span.cloud {
+				color: #eee;
+				font-weight: normal;
+			}
+
+			span.beta {
+				color: #aaa;
+				font-weight: normal;
+				font-style: italic;
+			}
 		}
 	}
 

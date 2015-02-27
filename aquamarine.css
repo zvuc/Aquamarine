@@ -5,7 +5,7 @@
  * github repo: https://github.com/zvuc/Aquamarine 
  * 
  * created on 2014-08-26 
- * last updated 2015-02-25 
+ * last updated 2015-02-27 
  * 
  * Copyright 2015 Hansol Kim; MIT License 
  */
@@ -284,12 +284,25 @@
     color: #fff;
   }
   body.app h1#title {
-    margin-top: 0;
+    display: block;
+    height: 32px;
+    margin: 0;
+    padding: 0 0 0 5px;
+    line-height: 34px;
+  }
+  body.app h1#title span.logo {
+    display: inline-block;
+    margin: 0;
+    height: 100%;
   }
   body.app h1#title span.logotype {
+    display: inline-block;
+    height: 100%;
+    margin: 0 5px 0 -3px;
+    padding: 0;
     color: #eee;
+    line-height: 34px;
     font-weight: bold;
-    padding-left: 2px;
   }
   body.app h1#title span.logotype span.cloud {
     color: #eee;
