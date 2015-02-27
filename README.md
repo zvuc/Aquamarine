@@ -12,7 +12,7 @@ This repo is for code maintenance. Whenever there is a need to update, it will b
 ### 1. Install with userstyles extension
 First install the extension depending on your browser: [Firefox](https://addons.mozilla.org/en-US/firefox/addon/stylish/), [Chrome](https://chrome.google.com/webstore/detail/stylish/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=en), [Safari](http://code.grid.in.th/)
 
-### 2a. Install userstyle from userstyles.org
+### 2. Install userstyle from userstyles.org
 Go to [the userstyles.org page](https://userstyles.org/styles/104692/), select your customize options, click the install button. 
 
 This way is recommended because you can easily update the style whenever there is an update pushed by me, and you can also select some options with a click.
@@ -35,6 +35,11 @@ For browsers other than Firefox, remove the top `@-moz-document url-prefix("http
 
 ## Changelog
 See [CHANGELOG.md](/CHANGELOG.md).
+
+
+## Credits for included open-source projects
+- Ace Editor syntax highlighter color scheme from [Tomorrow Theme](https://github.com/ChrisKempson/Tomorrow-Theme) by Chris Kempson : MIT License
+- Lato Font by by Łukasz Dziedzic : SIL Open Font License, 1.1 (hosted on [Google Fonts](http://www.google.com/fonts/specimen/Lato))
 
 
 ## Disclaimer
