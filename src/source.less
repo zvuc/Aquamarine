@@ -16,6 +16,9 @@
 @primary-color-pale-2: #637171;
 
 
+// default self nick color
+@self-nick-color: @color-teal;
+
 /* Lato font load */
 @import 'lato.less';
 
@@ -528,7 +531,7 @@ div.log {
 			background: #2a2a2a;
 
 			span a.author {
-				color: @color-teal;
+				color: @self-nick-color;
 				/*[[nick_color]]*/
 
 				&.hover,
@@ -536,7 +539,7 @@ div.log {
 				&:hover {
 					text-decoration: none;
 					border-bottom: 1px solid #aaa;
-					color: @color-teal;
+					color: @self-nick-color;
 					/*[[nick_color]]*/
 				}
 			}
@@ -1475,14 +1478,14 @@ ul.memberList li a:hover,
 ul.memberList li.hover a {
 	text-decoration: none;
 	border-bottom: 1px solid rgba(255,255,255,0.5) !important;
-	color: @color-teal;
+	color: @self-nick-color;
 	/*[[nick_color]]*/
 }
 
 // inputbox nick color
 td.nickcell a.nick,
 td.nickcell a.nick:hover {
-	color: @color-teal;
+	color: @self-nick-color;
 	/*[[nick_color]]*/
 }
 

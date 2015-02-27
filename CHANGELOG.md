@@ -1,5 +1,8 @@
 # Changelog
 
+#### :: 2015-02-27 ::
+- added options for font on userstyles.org install page
+
 #### :: 2015-02-25 ::
 - add styles for new file upload feature
 - add styles for pastebin embeds
