@@ -40,10 +40,26 @@
     font-weight: 700;
     src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(//fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(//fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYED8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
   }
+  /* set font */
+  body.app,
+  body.app button,
+  div.log div.row span a.author,
+  .nick-colors div.log div.row span a.author,
+  div.log span a.user,
+  div.log span a.server,
+  td.bufferinputcell td.nickcell a.nick {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
+    /*[[font-set]]*/
+  }
+  div.log div.messageRow,
+  td.inputcell textarea,
+  div#timeContainer {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
+    /*[[msg-font-set]]*/
+  }
   /* base */
   body.app {
     background-color: #1f1f1f;
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
   }
   body.app #container {
     color: #eee;
@@ -119,7 +135,6 @@
   /* ---------------------------------------------------------------------------------------- */
   /* buttons, forms, autocomplete */
   body.app button {
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
     font-weight: 700;
     font-size: 1rem;
   }
@@ -351,11 +366,6 @@
     margin: 10px 0 0 0;
   }
   /* ------------------------------ message part -------------------------------------------- */
-  div.log div.messageRow,
-  td.inputcell textarea,
-  div#timeContainer {
-    font-family: "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
-  }
   div.scroll {
     background-color: #1f1f1f;
   }
@@ -398,7 +408,6 @@
   div.log span a.server {
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
   }
   div.log div.row span a.server.hover,
   div.log div.row span a.server.hover:hover,
@@ -572,7 +581,6 @@
     border-radius: 2px 0 0 2px;
   }
   td.bufferinputcell td.nickcell a.nick {
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
     margin-right: 3px;
   }
   td.bufferinputcell td.inputcell {
@@ -1229,7 +1237,6 @@
   .nick-colors div.log div.row span a.author {
     -webkit-transition: 1s color, 0.2s border-color !important;
     transition: 1s color, 0.2s border-color !important;
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "HiraKakuProN-W3", "Hiragino Sans GB W3", "Apple SD Gothic Neo", "NanumBarunGothic", "NanumGothic", "나눔고딕", "Malgun Gothic", sans-serif;
   }
   .nick-colors ul.memberList li a:hover {
     -webkit-transition: 0.2s color, 0.2s border-color !important;

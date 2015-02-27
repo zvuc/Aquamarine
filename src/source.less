@@ -20,31 +20,60 @@
 @import 'lato.less';
 
 
-.font-set() {
-	font-family: 
-		"Lato",
-		"Helvetica Neue","Helvetica","Arial",
-		"HiraKakuProN-W3","Hiragino Sans GB W3",
-		"Apple SD Gothic Neo",
-		"NanumBarunGothic","NanumGothic",
-		"나눔고딕","Malgun Gothic",
-		sans-serif;
+.font-set-lato() {
+font-family: 
+	"Lato",
+	"Helvetica Neue","Helvetica","Arial",
+	"HiraKakuProN-W3","Hiragino Sans GB W3",
+	"Apple SD Gothic Neo",
+	"NanumBarunGothic","NanumGothic",
+	"나눔고딕","Malgun Gothic",
+	sans-serif;
 }
 
 .font-set-helvetica() {
-	font-family:
-		"Helvetica Neue","Helvetica","Arial",
-		"HiraKakuProN-W3","Hiragino Sans GB W3",
-		"Apple SD Gothic Neo",
-		"NanumBarunGothic","NanumGothic",
-		"나눔고딕","Malgun Gothic",
-		sans-serif;
+font-family:
+	"Helvetica Neue","Helvetica","Arial",
+	"HiraKakuProN-W3","Hiragino Sans GB W3",
+	"Apple SD Gothic Neo",
+	"NanumBarunGothic","NanumGothic",
+	"나눔고딕","Malgun Gothic",
+	sans-serif;
+}
+
+.font-set-mono() {
+font-family: 
+	"Consolas", "Menlo", "Source Code Pro",
+	"HiraKakuProN-W3","Hiragino Sans GB W3",
+	"Apple SD Gothic Neo", "NanumGothicCoding",
+	"NanumBarunGothic","NanumGothic",
+	"Malgun Gothic",
+	monospace;
+}
+
+
+/* set font */
+body.app, 
+body.app button,
+div.log div.row span a.author,
+.nick-colors div.log div.row span a.author,
+div.log span a.user,
+div.log span a.server,
+td.bufferinputcell td.nickcell a.nick {
+	.font-set-lato;
+	/*[[font-set]]*/
+}
+
+div.log div.messageRow,
+td.inputcell textarea,
+div#timeContainer {
+	.font-set-helvetica;
+	/*[[msg-font-set]]*/
 }
 
 /* base */
 body.app {
 	background-color: #1f1f1f;
-	.font-set;
 
 	#container {
 		color: #eee;
@@ -111,7 +140,6 @@ body.app {
 
 	// global button
 	button {
-		.font-set;
 		font-weight: 700;
 		font-size: 1rem;
 
@@ -403,13 +431,6 @@ body.app {
 
 /* ------------------------------ message part -------------------------------------------- */
 
-// keep message text and timestamp font to helvetica
-div.log div.messageRow,
-td.inputcell textarea,
-div#timeContainer {
-	.font-set-helvetica;
-}
-
 div.scroll {
 	background-color: #1f1f1f;
 }
@@ -460,7 +481,6 @@ div.log {
 	span a.server {
 		text-decoration: none;
 		border-bottom: 1px solid rgba(255,255,255,0.2);
-		.font-set;
 	}
 
 	div.row span a.server.hover,
@@ -677,7 +697,6 @@ td.bufferinputcell {
 		border-radius: 2px 0 0 2px;
 
 		a.nick {
-			.font-set;
 			margin-right: 3px;
 		}
 	}
@@ -1446,7 +1465,6 @@ body.app {
 div.log div.row span a.author,
 .nick-colors div.log div.row span a.author {
 	transition: 1s color, 0.2s border-color !important;
-	.font-set;
 }
 .nick-colors ul.memberList li a:hover {
 	transition: 0.2s color, 0.2s border-color !important;
