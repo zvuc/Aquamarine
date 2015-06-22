@@ -5,7 +5,7 @@
  * github repo: https://github.com/zvuc/Aquamarine 
  * 
  * created on 2014-08-26 
- * last updated 2015-02-27 
+ * last updated 2015-06-22 
  * 
  * Copyright 2015 Hansol Kim; MIT License 
  */
@@ -733,6 +733,13 @@
   div.memberwrapper ul.memberList.memberList li ul {
     border-bottom: 1px solid #1f1f1f;
     font-size: 0.9em;
+  }
+  div.memberwrapper ul.memberList li.oper h2,
+  div.memberwrapper ul.memberList li.oper ul {
+    background: rgba(255, 91, 0, 0.1);
+  }
+  div.memberwrapper ul.memberList li.oper h2 {
+    color: #FF5B00;
   }
   div.memberwrapper ul.memberList li.owner h2,
   div.memberwrapper ul.memberList li.owner ul {
