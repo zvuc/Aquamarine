@@ -1,3 +1,6 @@
+## Note:
+*This style has been deprecated since major redesign of the web app on 2015-09-14 (https://blog.irccloud.com/2015-web-redesign/). Please use the native "Ash" color scheme in settings instead.*
+
 # Aquamarine
 A dark-themed userstyle for [IRCCloud](https://www.irccloud.com)
 
